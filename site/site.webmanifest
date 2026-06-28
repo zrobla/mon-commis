@@ -1,0 +1,21 @@
+{
+  "name": "MON COMMIS",
+  "short_name": "Mon Commis",
+  "description": "Conciergerie & courses à Abidjan.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#112844",
+  "icons": [
+    {
+      "src": "img/brand/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

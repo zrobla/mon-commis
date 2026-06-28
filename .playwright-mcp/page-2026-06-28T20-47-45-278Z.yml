@@ -1,0 +1,333 @@
+- generic [active] [ref=e1]:
+  - link "Passer au contenu principal" [ref=e2] [cursor=pointer]:
+    - /url: "#content-start"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - link "MON COMMIS — Gestion" [ref=e7] [cursor=pointer]:
+        - /url: /admin/
+      - generic [ref=e8]:
+        - text: Bienvenue,
+        - strong [ref=e9]: admin
+        - text: .
+        - link "Voir le site" [ref=e10] [cursor=pointer]:
+          - /url: /
+        - text: /
+        - link "Modifier le mot de passe" [ref=e11] [cursor=pointer]:
+          - /url: /admin/password_change/
+        - text: /
+        - button "Déconnexion" [ref=e13] [cursor=pointer]
+        - 'button "Changer de thème (actuellement : automatique)" [ref=e14] [cursor=pointer]':
+          - generic [ref=e15]: "Changer de thème (actuellement : automatique)"
+          - img [ref=e16]
+    - navigation "Fil d'Ariane" [ref=e18]:
+      - generic [ref=e19]:
+        - link "Accueil" [ref=e20] [cursor=pointer]:
+          - /url: /admin/
+        - text: ›
+        - link "Gestion" [ref=e21] [cursor=pointer]:
+          - /url: /admin/gestion/
+        - text: › Missions / Demandes
+    - generic [ref=e22]:
+      - button "Basculer la navigation" [ref=e23] [cursor=pointer]: «
+      - navigation "Barre latérale" [ref=e24]:
+        - searchbox "Filtrer les éléments de navigation" [ref=e25]
+        - table "Authentification et autorisation" [ref=e27]:
+          - caption [ref=e28]:
+            - link "Authentification et autorisation" [ref=e29] [cursor=pointer]:
+              - /url: /admin/auth/
+          - rowgroup [ref=e30]:
+            - row "Groupes Ajouter" [ref=e31]:
+              - rowheader "Groupes" [ref=e32]:
+                - link "Groupes" [ref=e33] [cursor=pointer]:
+                  - /url: /admin/auth/group/
+              - cell "Ajouter" [ref=e34]:
+                - link "Ajouter" [ref=e35] [cursor=pointer]:
+                  - /url: /admin/auth/group/add/
+            - row "Utilisateurs Ajouter" [ref=e36]:
+              - rowheader "Utilisateurs" [ref=e37]:
+                - link "Utilisateurs" [ref=e38] [cursor=pointer]:
+                  - /url: /admin/auth/user/
+              - cell "Ajouter" [ref=e39]:
+                - link "Ajouter" [ref=e40] [cursor=pointer]:
+                  - /url: /admin/auth/user/add/
+        - table "Gestion" [ref=e42]:
+          - caption [ref=e43]:
+            - link "Gestion" [ref=e44] [cursor=pointer]:
+              - /url: /admin/gestion/
+          - rowgroup [ref=e45]:
+            - row "Clients Ajouter" [ref=e46]:
+              - rowheader "Clients" [ref=e47]:
+                - link "Clients" [ref=e48] [cursor=pointer]:
+                  - /url: /admin/gestion/client/
+              - cell "Ajouter" [ref=e49]:
+                - link "Ajouter" [ref=e50] [cursor=pointer]:
+                  - /url: /admin/gestion/client/add/
+            - row "Commis Ajouter" [ref=e51]:
+              - rowheader "Commis" [ref=e52]:
+                - link "Commis" [ref=e53] [cursor=pointer]:
+                  - /url: /admin/gestion/commis/
+              - cell "Ajouter" [ref=e54]:
+                - link "Ajouter" [ref=e55] [cursor=pointer]:
+                  - /url: /admin/gestion/commis/add/
+            - row "Formules Secrétariat Ajouter" [ref=e56]:
+              - rowheader "Formules Secrétariat" [ref=e57]:
+                - link "Formules Secrétariat" [ref=e58] [cursor=pointer]:
+                  - /url: /admin/gestion/formulesecretariat/
+              - cell "Ajouter" [ref=e59]:
+                - link "Ajouter" [ref=e60] [cursor=pointer]:
+                  - /url: /admin/gestion/formulesecretariat/add/
+            - row "Missions / Demandes Ajouter" [ref=e61]:
+              - rowheader "Missions / Demandes" [ref=e62]:
+                - link "Missions / Demandes" [ref=e63] [cursor=pointer]:
+                  - /url: /admin/gestion/mission/
+              - cell "Ajouter" [ref=e64]:
+                - link "Ajouter" [ref=e65] [cursor=pointer]:
+                  - /url: /admin/gestion/mission/add/
+            - row "Paiements Ajouter" [ref=e66]:
+              - rowheader "Paiements" [ref=e67]:
+                - link "Paiements" [ref=e68] [cursor=pointer]:
+                  - /url: /admin/gestion/paiement/
+              - cell "Ajouter" [ref=e69]:
+                - link "Ajouter" [ref=e70] [cursor=pointer]:
+                  - /url: /admin/gestion/paiement/add/
+            - row "Souscriptions Secrétariat Ajouter" [ref=e71]:
+              - rowheader "Souscriptions Secrétariat" [ref=e72]:
+                - link "Souscriptions Secrétariat" [ref=e73] [cursor=pointer]:
+                  - /url: /admin/gestion/souscription/
+              - cell "Ajouter" [ref=e74]:
+                - link "Ajouter" [ref=e75] [cursor=pointer]:
+                  - /url: /admin/gestion/souscription/add/
+            - row "Zones de couverture Ajouter" [ref=e76]:
+              - rowheader "Zones de couverture" [ref=e77]:
+                - link "Zones de couverture" [ref=e78] [cursor=pointer]:
+                  - /url: /admin/gestion/zone/
+              - cell "Ajouter" [ref=e79]:
+                - link "Ajouter" [ref=e80] [cursor=pointer]:
+                  - /url: /admin/gestion/zone/add/
+      - main [ref=e81]:
+        - generic [ref=e82]:
+          - heading "Sélectionnez l’objet Mission / Demande à changer" [level=1] [ref=e83]
+          - generic [ref=e84]:
+            - list [ref=e85]:
+              - listitem [ref=e86]:
+                - link "Ajouter Mission / Demande" [ref=e87] [cursor=pointer]:
+                  - /url: /admin/gestion/mission/add/
+            - generic [ref=e88]:
+              - generic [ref=e89]:
+                - search [ref=e91]:
+                  - generic [ref=e92]:
+                    - img "Search" [ref=e94]
+                    - textbox "Search" [ref=e95]
+                    - button "Rechercher" [ref=e96] [cursor=pointer]
+                - navigation [ref=e97]:
+                  - link "‹ 2026" [ref=e98] [cursor=pointer]:
+                    - /url: "?cree_le__year=2026"
+                  - link "28 juin" [ref=e99] [cursor=pointer]:
+                    - /url: "?cree_le__day=28&cree_le__month=6&cree_le__year=2026"
+                - generic [ref=e100]:
+                  - generic [ref=e101]:
+                    - generic [ref=e102]:
+                      - text: "Action :"
+                      - combobox "Action :" [ref=e103]:
+                        - option "---------" [selected]
+                        - option "Supprimer les Missions / Demandes sélectionnés"
+                        - option "→ Qualifiée"
+                        - option "→ Affectée"
+                        - option "→ En cours"
+                        - option "→ Livrée"
+                        - option "→ Clôturée"
+                    - button "Envoyer" [ref=e104] [cursor=pointer]
+                    - generic [ref=e105]: 0 sur 2 sélectionné
+                  - table [ref=e107]:
+                    - rowgroup [ref=e108]:
+                      - row "Sélectionner tous les objets de cette page en vue d’une action Référence Nom affiche Service Zone Statut Commis affecté Urgence (+50 %) Total (FCFA) Canal Inverser le tri Reçue le" [ref=e109]:
+                        - columnheader "Sélectionner tous les objets de cette page en vue d’une action" [ref=e110]:
+                          - checkbox "Sélectionner tous les objets de cette page en vue d’une action" [ref=e113]
+                        - columnheader "Référence" [ref=e114]:
+                          - link "Référence" [ref=e116] [cursor=pointer]:
+                            - /url: "?o=1.-10"
+                        - columnheader "Nom affiche" [ref=e117]:
+                          - generic [ref=e119]: Nom affiche
+                        - columnheader "Service" [ref=e120]:
+                          - link "Service" [ref=e122] [cursor=pointer]:
+                            - /url: "?o=3.-10"
+                        - columnheader "Zone" [ref=e123]:
+                          - link "Zone" [ref=e125] [cursor=pointer]:
+                            - /url: "?o=4.-10"
+                        - columnheader "Statut" [ref=e126]:
+                          - link "Statut" [ref=e128] [cursor=pointer]:
+                            - /url: "?o=5.-10"
+                        - columnheader "Commis affecté" [ref=e129]:
+                          - link "Commis affecté" [ref=e131] [cursor=pointer]:
+                            - /url: "?o=6.-10"
+                        - columnheader "Urgence (+50 %)" [ref=e132]:
+                          - link "Urgence (+50 %)" [ref=e134] [cursor=pointer]:
+                            - /url: "?o=7.-10"
+                        - columnheader "Total (FCFA)" [ref=e135]:
+                          - link "Total (FCFA)" [ref=e137] [cursor=pointer]:
+                            - /url: "?o=8.-10"
+                        - columnheader "Canal" [ref=e138]:
+                          - link "Canal" [ref=e140] [cursor=pointer]:
+                            - /url: "?o=9.-10"
+                        - columnheader "Inverser le tri Reçue le" [ref=e141]:
+                          - link "Inverser le tri" [ref=e143] [cursor=pointer]:
+                            - /url: "?o=10"
+                          - link "Reçue le" [ref=e145] [cursor=pointer]:
+                            - /url: "?o=10"
+                    - rowgroup [ref=e146]:
+                      - row "Choisir cet objet pour une action - MC-2606-0002 — Autre / sur-mesure MC-2606-0002 X Autre / sur-mesure - Nouvelle - False 0 Formulaire site 28 juin 2026 20:47" [ref=e147]:
+                        - cell "Choisir cet objet pour une action - MC-2606-0002 — Autre / sur-mesure" [ref=e148]:
+                          - checkbox "Choisir cet objet pour une action - MC-2606-0002 — Autre / sur-mesure" [ref=e149]
+                        - rowheader "MC-2606-0002" [ref=e150]:
+                          - link "MC-2606-0002" [ref=e151] [cursor=pointer]:
+                            - /url: /admin/gestion/mission/2/change/
+                        - cell "X" [ref=e152]
+                        - cell "Autre / sur-mesure" [ref=e153]
+                        - cell "-" [ref=e154]
+                        - cell "Nouvelle" [ref=e155]
+                        - cell "-" [ref=e156]
+                        - cell "False" [ref=e157]:
+                          - img "False" [ref=e158]
+                        - cell "0" [ref=e159]
+                        - cell "Formulaire site" [ref=e160]
+                        - cell "28 juin 2026 20:47" [ref=e161]
+                      - row "Choisir cet objet pour une action - MC-2606-0001 — Pharmacie & ordonnances MC-2606-0001 Test Aïcha Pharmacie & ordonnances Zone Étendue Nouvelle - True 0 Formulaire site 28 juin 2026 20:46" [ref=e162]:
+                        - cell "Choisir cet objet pour une action - MC-2606-0001 — Pharmacie & ordonnances" [ref=e163]:
+                          - checkbox "Choisir cet objet pour une action - MC-2606-0001 — Pharmacie & ordonnances" [ref=e164]
+                        - rowheader "MC-2606-0001" [ref=e165]:
+                          - link "MC-2606-0001" [ref=e166] [cursor=pointer]:
+                            - /url: /admin/gestion/mission/1/change/
+                        - cell "Test Aïcha" [ref=e167]
+                        - cell "Pharmacie & ordonnances" [ref=e168]
+                        - cell "Zone Étendue" [ref=e169]
+                        - cell "Nouvelle" [ref=e170]
+                        - cell "-" [ref=e171]
+                        - cell "True" [ref=e172]:
+                          - img "True" [ref=e173]
+                        - cell "0" [ref=e174]
+                        - cell "Formulaire site" [ref=e175]
+                        - cell "28 juin 2026 20:46" [ref=e176]
+                  - paragraph [ref=e177]: 2 Missions / Demandes
+              - navigation "Filtre" [ref=e178]:
+                - heading "Filtre" [level=2] [ref=e179]
+                - heading "Afficher les nombres" [level=3] [ref=e181]:
+                  - link "Afficher les nombres" [ref=e182] [cursor=pointer]:
+                    - /url: "?_facets=True"
+                - group [ref=e183]:
+                  - generic "↓ Par Statut" [ref=e184] [cursor=pointer]
+                  - list [ref=e185]:
+                    - listitem [ref=e186]:
+                      - link "Tout" [ref=e187] [cursor=pointer]:
+                        - /url: "?"
+                    - listitem [ref=e188]:
+                      - link "Nouvelle" [ref=e189] [cursor=pointer]:
+                        - /url: "?statut__exact=nouvelle"
+                    - listitem [ref=e190]:
+                      - link "Qualifiée" [ref=e191] [cursor=pointer]:
+                        - /url: "?statut__exact=qualifiee"
+                    - listitem [ref=e192]:
+                      - link "Affectée" [ref=e193] [cursor=pointer]:
+                        - /url: "?statut__exact=affectee"
+                    - listitem [ref=e194]:
+                      - link "En cours" [ref=e195] [cursor=pointer]:
+                        - /url: "?statut__exact=en_cours"
+                    - listitem [ref=e196]:
+                      - link "Livrée" [ref=e197] [cursor=pointer]:
+                        - /url: "?statut__exact=livree"
+                    - listitem [ref=e198]:
+                      - link "Clôturée" [ref=e199] [cursor=pointer]:
+                        - /url: "?statut__exact=cloturee"
+                    - listitem [ref=e200]:
+                      - link "Annulée" [ref=e201] [cursor=pointer]:
+                        - /url: "?statut__exact=annulee"
+                - group [ref=e202]:
+                  - generic "↓ Par Service" [ref=e203] [cursor=pointer]
+                  - list [ref=e204]:
+                    - listitem [ref=e205]:
+                      - link "Tout" [ref=e206] [cursor=pointer]:
+                        - /url: "?"
+                    - listitem [ref=e207]:
+                      - link "Courses au marché" [ref=e208] [cursor=pointer]:
+                        - /url: "?type_service__exact=courses_marche"
+                    - listitem [ref=e209]:
+                      - link "Pharmacie & ordonnances" [ref=e210] [cursor=pointer]:
+                        - /url: "?type_service__exact=pharmacie"
+                    - listitem [ref=e211]:
+                      - link "Démarches administratives" [ref=e212] [cursor=pointer]:
+                        - /url: "?type_service__exact=demarches"
+                    - listitem [ref=e213]:
+                      - link "Shopping & cadeaux" [ref=e214] [cursor=pointer]:
+                        - /url: "?type_service__exact=shopping"
+                    - listitem [ref=e215]:
+                      - link "Dépôt & retrait de colis" [ref=e216] [cursor=pointer]:
+                        - /url: "?type_service__exact=colis"
+                    - listitem [ref=e217]:
+                      - link "Retrait de documents" [ref=e218] [cursor=pointer]:
+                        - /url: "?type_service__exact=documents"
+                    - listitem [ref=e219]:
+                      - link "Secrétariat à distance" [ref=e220] [cursor=pointer]:
+                        - /url: "?type_service__exact=secretariat"
+                    - listitem [ref=e221]:
+                      - link "Autre / sur-mesure" [ref=e222] [cursor=pointer]:
+                        - /url: "?type_service__exact=autre"
+                - group [ref=e223]:
+                  - generic "↓ Par Canal" [ref=e224] [cursor=pointer]
+                  - list [ref=e225]:
+                    - listitem [ref=e226]:
+                      - link "Tout" [ref=e227] [cursor=pointer]:
+                        - /url: "?"
+                    - listitem [ref=e228]:
+                      - link "WhatsApp" [ref=e229] [cursor=pointer]:
+                        - /url: "?canal__exact=whatsapp"
+                    - listitem [ref=e230]:
+                      - link "Formulaire site" [ref=e231] [cursor=pointer]:
+                        - /url: "?canal__exact=formulaire"
+                    - listitem [ref=e232]:
+                      - link "Téléphone" [ref=e233] [cursor=pointer]:
+                        - /url: "?canal__exact=telephone"
+                - group [ref=e234]:
+                  - generic "↓ Par Urgence (+50 %)" [ref=e235] [cursor=pointer]
+                  - list [ref=e236]:
+                    - listitem [ref=e237]:
+                      - link "Tout" [ref=e238] [cursor=pointer]:
+                        - /url: "?"
+                    - listitem [ref=e239]:
+                      - link "Oui" [ref=e240] [cursor=pointer]:
+                        - /url: "?urgence__exact=1"
+                    - listitem [ref=e241]:
+                      - link "Non" [ref=e242] [cursor=pointer]:
+                        - /url: "?urgence__exact=0"
+                - group [ref=e243]:
+                  - generic "↓ Par Zone" [ref=e244] [cursor=pointer]
+                  - list [ref=e245]:
+                    - listitem [ref=e246]:
+                      - link "Tout" [ref=e247] [cursor=pointer]:
+                        - /url: "?"
+                    - listitem [ref=e248]:
+                      - link "Zone Standard" [ref=e249] [cursor=pointer]:
+                        - /url: "?zone__id__exact=1"
+                    - listitem [ref=e250]:
+                      - link "Zone Étendue" [ref=e251] [cursor=pointer]:
+                        - /url: "?zone__id__exact=2"
+                    - listitem [ref=e252]:
+                      - link "Zone Spéciale" [ref=e253] [cursor=pointer]:
+                        - /url: "?zone__id__exact=3"
+                    - listitem [ref=e254]:
+                      - link "-" [ref=e255] [cursor=pointer]:
+                        - /url: "?zone__isnull=True"
+                - group [ref=e256]:
+                  - generic "↓ Par Mode de paiement" [ref=e257] [cursor=pointer]
+                  - list [ref=e258]:
+                    - listitem [ref=e259]:
+                      - link "Tout" [ref=e260] [cursor=pointer]:
+                        - /url: "?"
+                    - listitem [ref=e261]:
+                      - link "Espèces" [ref=e262] [cursor=pointer]:
+                        - /url: "?mode_paiement__exact=especes"
+                    - listitem [ref=e263]:
+                      - link "Mobile money (Orange/MTN/Moov/Wave)" [ref=e264] [cursor=pointer]:
+                        - /url: "?mode_paiement__exact=mobile_money"
+                    - listitem [ref=e265]:
+                      - link "Virement" [ref=e266] [cursor=pointer]:
+                        - /url: "?mode_paiement__exact=virement"
+    - contentinfo

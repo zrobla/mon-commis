@@ -1,0 +1,18 @@
+
+2. Système de gestion Django (moncommis/, gestion/, api/)
+
+- Venv .commis (Django 5.1). Modèles 2 pôles : Client, Commis, Zone, Mission (cœur, calcul urgence +50 % auto), FormuleSecretariat, Souscription, Paiement.
+- Admin = back-office : liste filtrable des demandes (statut/service/canal/zone), affectation d'un commis, changement de statut par actions groupées, badges, paiements en inline.
+- API POST /api/demandes/ : crée une Mission depuis la vitrine — testé de bout en bout (✓), CORS limité ✓, anti-spam 429 ✓.
+- Zones & formules préremplies (migration seed CGV). .env/.gitignore/requirements.txt en place (secrets hors code).
+
+Vérifié : python manage.py check OK, migrations à jour, une demande envoyée depuis le formulaire apparaît bien dans l'admin (MC-2606-0001).
+
+Pour lancer
+
+# Vitrine
+cd "MON COLIS/site" && python3 build_commis.py && python3 -m http.server 8765
+# Gestion
+cd "MON COLIS" && source .commis/bin/activate && python manage.py runserver  # /admin/
+Superuser de dev : admin / MonCommis2026! (à changer).
+

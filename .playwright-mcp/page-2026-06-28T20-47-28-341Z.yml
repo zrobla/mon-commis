@@ -1,0 +1,21 @@
+- generic [ref=e1]:
+  - link "Passer au contenu principal" [ref=e2] [cursor=pointer]:
+    - /url: "#content-start"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "MON COMMIS — Gestion" [ref=e7] [cursor=pointer]:
+          - /url: /admin/
+        - 'button "Changer de thème (actuellement : automatique)" [ref=e8] [cursor=pointer]':
+          - generic [ref=e9]: "Changer de thème (actuellement : automatique)"
+          - img [ref=e10]
+    - main [ref=e13]:
+      - generic [ref=e16]:
+        - generic [ref=e17]:
+          - generic [ref=e18]: "Nom d’utilisateur :"
+          - textbox "Nom d’utilisateur :" [active] [ref=e19]
+        - generic [ref=e20]:
+          - generic [ref=e21]: "Mot de passe :"
+          - textbox "Mot de passe :" [ref=e22]
+        - button "Connexion" [ref=e24] [cursor=pointer]
+    - contentinfo

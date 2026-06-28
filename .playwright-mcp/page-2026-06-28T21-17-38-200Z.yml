@@ -1,0 +1,252 @@
+- generic [active] [ref=e1]:
+  - link "Aller au contenu" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "MON COMMIS — accueil" [ref=e6] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=e7]:
+          - text: Mon
+          - strong [ref=e8]: Commis
+      - navigation "Navigation principale" [ref=e9]:
+        - link "Accueil" [ref=e10] [cursor=pointer]:
+          - /url: index.html
+        - generic [ref=e11]:
+          - generic [ref=e12]:
+            - link "Services" [ref=e13] [cursor=pointer]:
+              - /url: services.html
+            - button "Afficher les services" [ref=e14] [cursor=pointer]:
+              - img [ref=e15]
+          - menu:
+            - menuitem "Courses"
+            - menuitem "Démarches administratives"
+            - menuitem "Shopping & cadeaux"
+            - menuitem "Dépôt & retrait de colis"
+            - menuitem "Secrétariat à distance"
+            - menuitem "Autres services"
+            - menuitem "Tous nos services →"
+        - link "Secrétariat" [ref=e17] [cursor=pointer]:
+          - /url: secretariat.html
+        - link "À propos" [ref=e18] [cursor=pointer]:
+          - /url: a-propos.html
+        - link "Contact" [ref=e19] [cursor=pointer]:
+          - /url: contact.html
+        - link "Demander un commis" [ref=e20] [cursor=pointer]:
+          - /url: contact.html
+          - img [ref=e21]
+          - text: Demander un commis
+  - main [ref=e23]:
+    - generic [ref=e24]:
+      - img [ref=e25]
+      - generic [ref=e27]:
+        - generic [ref=e28]: Service Mon Commis
+        - heading "Courses" [level=1] [ref=e29]
+        - paragraph [ref=e30]: "Marché, pharmacie, quotidien : vos courses faites et livrées."
+        - generic [ref=e31]:
+          - link "Demander ce service" [ref=e32] [cursor=pointer]:
+            - /url: contact.html
+            - img [ref=e33]
+            - text: Demander ce service
+          - link "WhatsApp" [ref=e35] [cursor=pointer]:
+            - /url: https://wa.me/2250747791073
+            - img [ref=e36]
+            - text: WhatsApp
+    - generic [ref=e40]:
+      - generic [ref=e41]:
+        - generic [ref=e42]: Le détail
+        - heading "Ce que comprend ce service" [level=2] [ref=e43]
+        - paragraph [ref=e44]: Du marché à la pharmacie, Mon Commis se charge de toutes vos courses du quotidien. Vous transmettez votre liste, nous sélectionnons avec soin et nous livrons chez vous — dans toutes les communes d'Abidjan.
+        - list [ref=e45]:
+          - listitem [ref=e46]:
+            - img [ref=e47]
+            - generic [ref=e49]: Sélection soignée selon votre budget
+          - listitem [ref=e50]:
+            - img [ref=e51]
+            - generic [ref=e53]: Livraison dans votre commune
+          - listitem [ref=e54]:
+            - img [ref=e55]
+            - generic [ref=e57]: Confidentialité pour vos achats sensibles
+        - link "Demander ce service" [ref=e59] [cursor=pointer]:
+          - /url: contact.html
+          - img [ref=e60]
+          - text: Demander ce service
+      - generic [ref=e62]:
+        - article [ref=e63]:
+          - img [ref=e65]
+          - generic [ref=e69]:
+            - heading "Courses au marché" [level=3] [ref=e70]
+            - paragraph [ref=e71]: Achats alimentaires, condiments, légumes et produits frais, choisis avec exigence et selon votre budget.
+        - article [ref=e72]:
+          - img [ref=e74]
+          - generic [ref=e77]:
+            - heading "Pharmacie & ordonnances" [level=3] [ref=e78]
+            - paragraph [ref=e79]: Retrait de vos médicaments et exécution de vos ordonnances, en toute discrétion — pharmacie de garde au besoin.
+        - article [ref=e80]:
+          - img [ref=e82]
+          - generic [ref=e85]:
+            - heading "Courses du quotidien" [level=3] [ref=e86]
+            - paragraph [ref=e87]: "Supérette, boulangerie, petites emplettes récurrentes : confiez-nous vos achats réguliers et gagnez du temps."
+    - generic [ref=e89]:
+      - generic [ref=e91]:
+        - generic [ref=e92]: En images
+        - heading "Courses en pratique" [level=2] [ref=e93]
+      - generic [ref=e94]:
+        - figure [ref=e95]:
+          - img "Courses — Mon Commis Abidjan" [ref=e96]
+        - figure [ref=e97]:
+          - img "Courses — Mon Commis Abidjan" [ref=e98]
+        - figure [ref=e99]:
+          - img "Courses — Mon Commis Abidjan" [ref=e100]
+    - generic [ref=e102]:
+      - generic [ref=e104]:
+        - generic [ref=e105]: Comment ça marche
+        - heading "Trois étapes, zéro stress" [level=2] [ref=e106]
+      - generic [ref=e107]:
+        - article [ref=e108]:
+          - generic [ref=e109]: "01"
+          - img [ref=e111]
+          - heading "Vous décrivez" [level=3] [ref=e113]
+          - paragraph [ref=e114]: Envoyez votre besoin par WhatsApp ou via le formulaire — en quelques mots, c'est parti.
+        - article [ref=e115]:
+          - generic [ref=e116]: "02"
+          - img [ref=e118]
+          - heading "On confirme & vous réglez" [level=3] [ref=e121]
+          - paragraph [ref=e122]: Devis clair en FCFA. Les frais de commission sont réglés avant le début de la mission.
+        - article [ref=e123]:
+          - generic [ref=e124]: "03"
+          - img [ref=e126]
+          - heading "Votre commis exécute" [level=3] [ref=e130]
+          - paragraph [ref=e131]: Un commis de confiance s'occupe de tout et vous tient informé jusqu'à la remise en main propre.
+    - generic [ref=e133]:
+      - generic [ref=e135]:
+        - generic [ref=e136]: Tarifs & paiement
+        - heading "Des tarifs clairs, sans surprise" [level=2] [ref=e137]
+        - paragraph [ref=e138]: Les frais de commission sont réglés avant le début de chaque mission. Paiement en espèces, mobile money (Orange, MTN, Moov, Wave) ou virement.
+      - generic [ref=e139]:
+        - article [ref=e140]:
+          - img [ref=e142]
+          - heading "Tarif de base (commission)" [level=3] [ref=e145]
+          - paragraph [ref=e146]: Selon grille tarifaire communiquée au client
+        - article [ref=e147]:
+          - img [ref=e149]
+          - heading "Supplément urgence" [level=3] [ref=e151]
+          - paragraph [ref=e152]: +50 % du tarif de base (intervention dans l'heure)
+        - article [ref=e153]:
+          - img [ref=e155]
+          - heading "Shopping (prestation)" [level=3] [ref=e159]
+          - paragraph [ref=e160]: 5 000 à 15 000 FCFA selon la complexité des achats
+        - article [ref=e161]:
+          - img [ref=e163]
+          - heading "Collecte de documents" [level=3] [ref=e166]
+          - paragraph [ref=e167]: Prestation complémentaire, facturée séparément
+    - generic [ref=e169]:
+      - generic [ref=e171]:
+        - generic [ref=e172]: Zones de couverture
+        - heading "De Cocody à Grand-Bassam — et au-delà" [level=2] [ref=e173]
+        - paragraph [ref=e174]: Nous intervenons dans toutes les communes d'Abidjan. Les frais de déplacement dépendent de la zone.
+      - generic [ref=e175]:
+        - article [ref=e176]:
+          - img [ref=e178]
+          - heading "Zone Standard" [level=3] [ref=e181]
+          - paragraph [ref=e182]: Cocody, Plateau, Marcory, Treichville, Adjamé, Attécoubé
+          - paragraph [ref=e183]:
+            - img [ref=e184]
+            - strong [ref=e187]: Inclus dans le tarif de base
+        - article [ref=e188]:
+          - img [ref=e190]
+          - heading "Zone Étendue" [level=3] [ref=e193]
+          - paragraph [ref=e194]: Yopougon, Abobo, Bingerville, Anyama, Songon, Dabou, Grand-Bassam
+          - paragraph [ref=e195]:
+            - img [ref=e196]
+            - strong [ref=e199]: + 1 000 à 2 000 FCFA selon distance
+        - article [ref=e200]:
+          - img [ref=e202]
+          - heading "Zone Spéciale" [level=3] [ref=e206]
+          - paragraph [ref=e207]: Toute destination hors du périmètre ci-dessus
+          - paragraph [ref=e208]:
+            - img [ref=e209]
+            - strong [ref=e212]: Sur devis préalable
+    - generic [ref=e215]:
+      - generic [ref=e216]: Passons à l'action
+      - heading "Besoin de « courses » ?" [level=2] [ref=e217]
+      - paragraph [ref=e218]: "Décrivez votre demande à Mon Commis : devis clair en FCFA et réponse rapide, partout dans Abidjan."
+      - generic [ref=e219]:
+        - link "Demander un commis" [ref=e220] [cursor=pointer]:
+          - /url: contact.html
+          - img [ref=e221]
+          - text: Demander un commis
+        - link "WhatsApp" [ref=e223] [cursor=pointer]:
+          - /url: https://wa.me/2250747791073
+          - img [ref=e224]
+          - text: WhatsApp
+  - contentinfo [ref=e226]:
+    - generic [ref=e229]:
+      - generic [ref=e230]:
+        - link "MON COMMIS — accueil" [ref=e231] [cursor=pointer]:
+          - /url: index.html
+          - generic [ref=e232]:
+            - text: Mon
+            - strong [ref=e233]: Commis
+        - paragraph [ref=e234]: Conciergerie & courses à Abidjan. Vos courses, démarches, colis et rendez-vous confiés à un commis de confiance — vous gagnez un temps précieux.
+        - paragraph [ref=e235]:
+          - text: Au cœur d'Abidjan,
+          - generic [ref=e236]: à votre service.
+      - generic [ref=e237]:
+        - heading "Nos services" [level=4] [ref=e238]
+        - link "Courses" [ref=e239] [cursor=pointer]:
+          - /url: service-courses.html
+        - link "Démarches administratives" [ref=e240] [cursor=pointer]:
+          - /url: service-demarches.html
+        - link "Shopping & cadeaux" [ref=e241] [cursor=pointer]:
+          - /url: service-shopping.html
+        - link "Dépôt & retrait de colis" [ref=e242] [cursor=pointer]:
+          - /url: service-colis.html
+        - link "Secrétariat à distance" [ref=e243] [cursor=pointer]:
+          - /url: service-secretariat.html
+        - link "Autres services" [ref=e244] [cursor=pointer]:
+          - /url: service-autres.html
+      - generic [ref=e245]:
+        - heading "Mon Commis" [level=4] [ref=e246]
+        - link "Tous les services" [ref=e247] [cursor=pointer]:
+          - /url: services.html
+        - link "Secrétariat à distance" [ref=e248] [cursor=pointer]:
+          - /url: secretariat.html
+        - link "À propos" [ref=e249] [cursor=pointer]:
+          - /url: a-propos.html
+        - link "Zones de couverture" [ref=e250] [cursor=pointer]:
+          - /url: services.html#zones
+        - link "Demander un commis" [ref=e251] [cursor=pointer]:
+          - /url: contact.html
+      - generic [ref=e252]:
+        - heading "Contact" [level=4] [ref=e253]
+        - link "07 47 79 10 73" [ref=e254] [cursor=pointer]:
+          - /url: tel:+2250747791073
+          - img [ref=e256]
+          - generic [ref=e258]: 07 47 79 10 73
+        - link "WhatsApp" [ref=e259] [cursor=pointer]:
+          - /url: https://wa.me/2250747791073
+          - img [ref=e260]
+          - text: WhatsApp
+        - generic [ref=e262]:
+          - img [ref=e263]
+          - text: Abidjan, Côte d'Ivoire
+        - generic [ref=e266]:
+          - link "WhatsApp" [ref=e267] [cursor=pointer]:
+            - /url: https://wa.me/2250747791073
+            - img [ref=e268]
+          - link "TikTok" [ref=e270] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e271]
+          - link "Instagram" [ref=e273] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e274]
+          - link "Facebook" [ref=e276] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e277]
+    - generic [ref=e280]:
+      - generic [ref=e281]: © 2026 MON COMMIS — Abidjan, Côte d'Ivoire. Tous droits réservés.
+      - link "Demander un commis" [ref=e282] [cursor=pointer]:
+        - /url: contact.html
+  - link "WhatsApp" [ref=e283] [cursor=pointer]:
+    - /url: https://wa.me/2250747791073
+    - img [ref=e284]

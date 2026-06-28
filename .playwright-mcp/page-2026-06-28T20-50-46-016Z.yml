@@ -1,0 +1,549 @@
+- generic [active] [ref=e1]:
+  - link "Aller au contenu" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "MON COMMIS — accueil" [ref=e6] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=e7]:
+          - text: Mon
+          - strong [ref=e8]: Commis
+      - button "Ouvrir la navigation" [ref=e9]
+  - main [ref=e13]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e18]: Conciergerie & courses · Abidjan
+        - heading "Votre commis de confiance, au cœur d'Abidjan." [level=1] [ref=e19]
+        - paragraph [ref=e20]: Courses au marché, pharmacie, démarches administratives, shopping, colis, retrait de documents et secrétariat à distance. Vous décrivez, on s'occupe de tout.
+        - generic [ref=e21]:
+          - link "Demander un commis" [ref=e22] [cursor=pointer]:
+            - /url: contact.html
+            - img [ref=e23]
+            - text: Demander un commis
+          - link "WhatsApp" [ref=e25] [cursor=pointer]:
+            - /url: https://wa.me/2250747791073
+            - img [ref=e26]
+            - text: WhatsApp
+        - list [ref=e28]:
+          - listitem [ref=e29]:
+            - img [ref=e30]
+            - text: Toutes les communes d'Abidjan
+          - listitem [ref=e32]:
+            - img [ref=e33]
+            - text: Devis clair en FCFA
+          - listitem [ref=e35]:
+            - img [ref=e36]
+            - text: Discrétion garantie
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - link "Courses au marché" [ref=e41] [cursor=pointer]:
+            - /url: services.html#courses-marche
+            - generic [ref=e42]:
+              - img [ref=e44]
+              - generic [ref=e48]: Courses
+          - link "Pharmacie & ordonnances" [ref=e49] [cursor=pointer]:
+            - /url: services.html#pharmacie
+            - generic [ref=e50]:
+              - img [ref=e52]
+              - generic [ref=e55]: Pharmacie
+          - link "Démarches administratives" [ref=e56] [cursor=pointer]:
+            - /url: services.html#demarches
+            - generic [ref=e57]:
+              - img [ref=e59]
+              - generic [ref=e61]: Démarches
+          - link "Shopping & cadeaux" [ref=e62] [cursor=pointer]:
+            - /url: services.html#shopping
+            - generic [ref=e63]:
+              - img [ref=e65]
+              - generic [ref=e69]: Shopping
+          - link "Dépôt & retrait de colis" [ref=e70] [cursor=pointer]:
+            - /url: services.html#colis
+            - generic [ref=e71]:
+              - img [ref=e73]
+              - generic [ref=e76]: Dépôt
+          - link "Retrait de documents" [ref=e77] [cursor=pointer]:
+            - /url: services.html#documents
+            - generic [ref=e78]:
+              - img [ref=e80]
+              - generic [ref=e83]: Retrait
+          - link "Autres courses" [ref=e84] [cursor=pointer]:
+            - /url: services.html#autres
+            - generic [ref=e85]:
+              - img [ref=e87]
+              - generic [ref=e92]: Autres
+        - img "MON COMMIS" [ref=e94]
+    - generic [ref=e96]:
+      - generic [ref=e98]:
+        - generic [ref=e99]: Pôle Commissionnaire
+        - heading "Tout ce qu'un commis peut faire pour vous" [level=2] [ref=e100]
+        - paragraph [ref=e101]: "De vos courses du quotidien à vos démarches administratives : un seul interlocuteur, partout dans Abidjan."
+      - generic [ref=e102]:
+        - article [ref=e103]:
+          - img [ref=e105]
+          - heading "Courses au marché" [level=3] [ref=e109]
+          - paragraph [ref=e110]: Vos achats alimentaires, condiments, légumes et produits frais — sélectionnés avec soin et livrés chez vous.
+          - list [ref=e111]:
+            - listitem [ref=e112]:
+              - img [ref=e113]
+              - generic [ref=e115]: Liste transmise par WhatsApp ou formulaire
+            - listitem [ref=e116]:
+              - img [ref=e117]
+              - generic [ref=e119]: Achat selon votre budget
+            - listitem [ref=e120]:
+              - img [ref=e121]
+              - generic [ref=e123]: Livraison dans votre commune
+        - article [ref=e124]:
+          - img [ref=e126]
+          - heading "Pharmacie & ordonnances" [level=3] [ref=e129]
+          - paragraph [ref=e130]: Retrait de vos médicaments et exécution de vos ordonnances en toute discrétion, sans vous déplacer.
+          - list [ref=e131]:
+            - listitem [ref=e132]:
+              - img [ref=e133]
+              - generic [ref=e135]: Ordonnance prise en charge
+            - listitem [ref=e136]:
+              - img [ref=e137]
+              - generic [ref=e139]: Pharmacie de garde si besoin
+            - listitem [ref=e140]:
+              - img [ref=e141]
+              - generic [ref=e143]: Confidentialité garantie
+        - article [ref=e144]:
+          - img [ref=e146]
+          - heading "Démarches administratives" [level=3] [ref=e148]
+          - paragraph [ref=e149]: "Dépôt et retrait de dossiers : mairie, CNPS, impôts, préfecture, tribunal, notaire, hôpitaux."
+          - list [ref=e150]:
+            - listitem [ref=e151]:
+              - img [ref=e152]
+              - generic [ref=e154]: Dépôt & suivi de dossiers
+            - listitem [ref=e155]:
+              - img [ref=e156]
+              - generic [ref=e158]: File d'attente gérée pour vous
+            - listitem [ref=e159]:
+              - img [ref=e160]
+              - generic [ref=e162]: Gain de temps considérable
+        - article [ref=e163]:
+          - img [ref=e165]
+          - heading "Shopping & cadeaux" [level=3] [ref=e169]
+          - paragraph [ref=e170]: Achat d'articles vestimentaires, décoratifs ou cadeaux, selon votre description et votre budget.
+          - list [ref=e171]:
+            - listitem [ref=e172]:
+              - img [ref=e173]
+              - generic [ref=e175]: Conseil & sélection
+            - listitem [ref=e176]:
+              - img [ref=e177]
+              - generic [ref=e179]: Emballage cadeau possible
+            - listitem [ref=e180]:
+              - img [ref=e181]
+              - generic [ref=e183]: Tarif 5 000 à 15 000 FCFA selon complexité
+        - article [ref=e184]:
+          - img [ref=e186]
+          - heading "Dépôt & retrait de colis" [level=3] [ref=e189]
+          - paragraph [ref=e190]: Acheminement de vos colis entre deux adresses au sein des zones couvertes, en main propre.
+          - list [ref=e191]:
+            - listitem [ref=e192]:
+              - img [ref=e193]
+              - generic [ref=e195]: Point à point sécurisé
+            - listitem [ref=e196]:
+              - img [ref=e197]
+              - generic [ref=e199]: Suivi de bout en bout
+            - listitem [ref=e200]:
+              - img [ref=e201]
+              - generic [ref=e203]: Remise en main propre
+        - article [ref=e204]:
+          - img [ref=e206]
+          - heading "Retrait de documents" [level=3] [ref=e209]
+          - paragraph [ref=e210]: Résultats médicaux, actes de naissance, casiers judiciaires, diplômes et documents officiels.
+          - list [ref=e211]:
+            - listitem [ref=e212]:
+              - img [ref=e213]
+              - generic [ref=e215]: Collecte officielle
+            - listitem [ref=e216]:
+              - img [ref=e217]
+              - generic [ref=e219]: Documents sensibles protégés
+            - listitem [ref=e220]:
+              - img [ref=e221]
+              - generic [ref=e223]: Remise rapide
+    - generic [ref=e225]:
+      - generic [ref=e227]:
+        - generic [ref=e228]: Comment ça marche
+        - heading "Trois étapes, zéro stress" [level=2] [ref=e229]
+      - generic [ref=e230]:
+        - article [ref=e231]:
+          - generic [ref=e232]: "01"
+          - img [ref=e234]
+          - heading "Vous décrivez" [level=3] [ref=e236]
+          - paragraph [ref=e237]: Envoyez votre besoin par WhatsApp ou via le formulaire — en quelques mots, c'est parti.
+        - article [ref=e238]:
+          - generic [ref=e239]: "02"
+          - img [ref=e241]
+          - heading "On confirme & vous réglez" [level=3] [ref=e244]
+          - paragraph [ref=e245]: Devis clair en FCFA. Les frais de commission sont réglés avant le début de la mission.
+        - article [ref=e246]:
+          - generic [ref=e247]: "03"
+          - img [ref=e249]
+          - heading "Votre commis exécute" [level=3] [ref=e253]
+          - paragraph [ref=e254]: Un commis de confiance s'occupe de tout et vous tient informé jusqu'à la remise en main propre.
+    - generic [ref=e256]:
+      - generic [ref=e258]:
+        - generic [ref=e259]: Pourquoi Mon Commis
+        - heading "Le bon réflexe pour gagner du temps" [level=2] [ref=e260]
+      - generic [ref=e261]:
+        - article [ref=e262]:
+          - img [ref=e264]
+          - heading "Vous gagnez du temps" [level=3] [ref=e267]
+          - paragraph [ref=e268]: Déléguez vos courses et démarches ; concentrez-vous sur l'essentiel.
+        - article [ref=e269]:
+          - img [ref=e271]
+          - heading "Confiance & discrétion" [level=3] [ref=e274]
+          - paragraph [ref=e275]: "Documents sensibles, ordonnances, colis : traités avec sérieux et confidentialité."
+        - article [ref=e276]:
+          - img [ref=e278]
+          - heading "Tout Abidjan couvert" [level=3] [ref=e281]
+          - paragraph [ref=e282]: De Cocody à Yopougon jusqu'à Grand-Bassam — et au-delà sur devis.
+        - article [ref=e283]:
+          - img [ref=e285]
+          - heading "Service express" [level=3] [ref=e287]
+          - paragraph [ref=e288]: Une urgence ? Intervention dans l'heure (supplément +50 %).
+    - generic [ref=e290]:
+      - generic [ref=e292]:
+        - generic [ref=e293]: Mon Commis en images
+        - heading "Le service, sur le terrain" [level=2] [ref=e294]
+        - paragraph [ref=e295]: "Du marché à votre porte : un aperçu de nos prestations au quotidien, partout dans Abidjan."
+      - generic [ref=e296]:
+        - figure "Courses au marché" [ref=e297]:
+          - img "Étal de fruits et légumes frais au marché à Abidjan" [ref=e298]
+          - generic [ref=e299]: Courses au marché
+        - figure "Pharmacie & ordonnances" [ref=e300]:
+          - img "Retrait de médicaments et conseils en pharmacie" [ref=e301]
+          - generic [ref=e302]: Pharmacie & ordonnances
+        - figure "Shopping & cadeaux" [ref=e303]:
+          - img "Cadeaux soigneusement sélectionnés et emballés" [ref=e304]
+          - generic [ref=e305]: Shopping & cadeaux
+        - figure "Produits frais choisis avec soin" [ref=e306]:
+          - img "Sélection de légumes frais au marché" [ref=e307]
+          - generic [ref=e308]: Produits frais choisis avec soin
+        - figure "Vos achats, livrés chez vous" [ref=e309]:
+          - img "Sacs de shopping prêts à être livrés" [ref=e310]
+          - generic [ref=e311]: Vos achats, livrés chez vous
+    - generic [ref=e313]:
+      - generic [ref=e315]:
+        - generic [ref=e316]: Pôle Secrétariat à Distance
+        - heading "Votre agenda, géré pour vous" [level=2] [ref=e317]
+        - paragraph [ref=e318]: "Un secrétariat personnel par abonnement mensuel : vos rendez-vous saisis, rappelés et confirmés — vous ne ratez plus rien."
+      - generic [ref=e319]:
+        - article [ref=e320]:
+          - heading "STARTER" [level=3] [ref=e321]
+          - paragraph [ref=e322]: L'essentiel pour ne plus rien oublier.
+          - generic [ref=e323]:
+            - strong [ref=e324]: 15 000
+            - generic [ref=e325]: FCFA / mois
+          - paragraph [ref=e326]:
+            - img [ref=e327]
+            - text: Jusqu'à 8 RDV / mois
+          - list [ref=e330]:
+            - listitem [ref=e331]:
+              - img [ref=e332]
+              - generic [ref=e334]: Récapitulatif chaque dimanche
+            - listitem [ref=e335]:
+              - img [ref=e336]
+              - generic [ref=e338]: Rappels 30 min avant chaque RDV
+            - listitem [ref=e339]:
+              - img [ref=e340]
+              - generic [ref=e342]: Confirmation téléphonique
+            - listitem [ref=e343]:
+              - img [ref=e344]
+              - generic [ref=e346]: Gestion du carnet de contacts
+            - listitem [ref=e347]:
+              - img [ref=e348]
+              - generic [ref=e350]: Recherche d'infos / tarifs
+          - link "Choisir STARTER" [ref=e351] [cursor=pointer]:
+            - /url: contact.html?formule=starter
+            - img [ref=e352]
+            - text: Choisir STARTER
+        - article [ref=e354]:
+          - generic [ref=e355]: Le plus choisi
+          - heading "CONFORT" [level=3] [ref=e356]
+          - paragraph [ref=e357]: Le bon équilibre pour un agenda maîtrisé.
+          - generic [ref=e358]:
+            - strong [ref=e359]: 25 000
+            - generic [ref=e360]: FCFA / mois
+          - paragraph [ref=e361]:
+            - img [ref=e362]
+            - text: Jusqu'à 20 RDV / mois
+          - list [ref=e365]:
+            - listitem [ref=e366]:
+              - img [ref=e367]
+              - generic [ref=e369]: Récapitulatif chaque dimanche
+            - listitem [ref=e370]:
+              - img [ref=e371]
+              - generic [ref=e373]: Rappels 30 min avant chaque RDV
+            - listitem [ref=e374]:
+              - img [ref=e375]
+              - generic [ref=e377]: Confirmation téléphonique
+            - listitem [ref=e378]:
+              - img [ref=e379]
+              - generic [ref=e381]: Gestion du carnet de contacts
+            - listitem [ref=e382]:
+              - img [ref=e383]
+              - generic [ref=e385]: Recherche d'infos / tarifs
+          - link "Choisir CONFORT" [ref=e386] [cursor=pointer]:
+            - /url: contact.html?formule=confort
+            - img [ref=e387]
+            - text: Choisir CONFORT
+        - article [ref=e389]:
+          - heading "PREMIUM" [level=3] [ref=e390]
+          - paragraph [ref=e391]: La sérénité totale, sans aucune limite.
+          - generic [ref=e392]:
+            - strong [ref=e393]: 50 000
+            - generic [ref=e394]: FCFA / mois
+          - paragraph [ref=e395]:
+            - img [ref=e396]
+            - text: RDV illimités
+          - list [ref=e399]:
+            - listitem [ref=e400]:
+              - img [ref=e401]
+              - generic [ref=e403]: Récapitulatif chaque dimanche
+            - listitem [ref=e404]:
+              - img [ref=e405]
+              - generic [ref=e407]: Rappels 30 min avant chaque RDV
+            - listitem [ref=e408]:
+              - img [ref=e409]
+              - generic [ref=e411]: Confirmation téléphonique
+            - listitem [ref=e412]:
+              - img [ref=e413]
+              - generic [ref=e415]: Gestion du carnet de contacts
+            - listitem [ref=e416]:
+              - img [ref=e417]
+              - generic [ref=e419]: Recherche d'infos / tarifs
+          - link "Choisir PREMIUM" [ref=e420] [cursor=pointer]:
+            - /url: contact.html?formule=premium
+            - img [ref=e421]
+            - text: Choisir PREMIUM
+    - generic [ref=e424]:
+      - generic [ref=e426]:
+        - generic [ref=e427]: Zones de couverture
+        - heading "De Cocody à Grand-Bassam — et au-delà" [level=2] [ref=e428]
+        - paragraph [ref=e429]: Nous intervenons dans toutes les communes d'Abidjan. Les frais de déplacement dépendent de la zone.
+      - generic [ref=e430]:
+        - article [ref=e431]:
+          - img [ref=e433]
+          - heading "Zone Standard" [level=3] [ref=e436]
+          - paragraph [ref=e437]: Cocody, Plateau, Marcory, Treichville, Adjamé, Attécoubé
+          - paragraph [ref=e438]:
+            - img [ref=e439]
+            - strong [ref=e442]: Inclus dans le tarif de base
+        - article [ref=e443]:
+          - img [ref=e445]
+          - heading "Zone Étendue" [level=3] [ref=e448]
+          - paragraph [ref=e449]: Yopougon, Abobo, Bingerville, Anyama, Songon, Dabou, Grand-Bassam
+          - paragraph [ref=e450]:
+            - img [ref=e451]
+            - strong [ref=e454]: + 1 000 à 2 000 FCFA selon distance
+        - article [ref=e455]:
+          - img [ref=e457]
+          - heading "Zone Spéciale" [level=3] [ref=e461]
+          - paragraph [ref=e462]: Toute destination hors du périmètre ci-dessus
+          - paragraph [ref=e463]:
+            - img [ref=e464]
+            - strong [ref=e467]: Sur devis préalable
+    - generic [ref=e469]:
+      - generic [ref=e471]:
+        - generic [ref=e472]: Ils nous font confiance
+        - heading "La satisfaction, notre meilleure référence" [level=2] [ref=e473]
+      - generic [ref=e474]:
+        - article [ref=e475]:
+          - paragraph [ref=e476]: « Mon Commis me fait mes courses au marché chaque semaine. Toujours à l'heure, produits bien choisis. »
+          - generic [ref=e477]:
+            - generic [ref=e478]: AK
+            - generic [ref=e479]:
+              - strong [ref=e480]: Aïcha K.
+              - text: Cocody
+        - article [ref=e481]:
+          - paragraph [ref=e482]: « Ils ont retiré mes résultats médicaux et déposé un dossier à la CNPS le même jour. Un vrai gain de temps. »
+          - generic [ref=e483]:
+            - generic [ref=e484]: KB
+            - generic [ref=e485]:
+              - strong [ref=e486]: Konan B.
+              - text: Plateau
+        - article [ref=e487]:
+          - paragraph [ref=e488]: "« La formule Secrétariat CONFORT a changé mon organisation : je ne rate plus aucun rendez-vous. »"
+          - generic [ref=e489]:
+            - generic [ref=e490]: MD
+            - generic [ref=e491]:
+              - strong [ref=e492]: Mariam D.
+              - text: Marcory
+    - generic [ref=e494]:
+      - generic [ref=e496]:
+        - generic [ref=e497]: Contact & demande
+        - heading "Demandez votre commis" [level=2] [ref=e498]
+        - paragraph [ref=e499]:
+          - text: "Décrivez votre besoin : nous vous recontactons rapidement avec un devis clair en FCFA. Envoyez votre demande directement,"
+          - strong [ref=e500]: ou
+          - text: poursuivez sur WhatsApp — comme vous préférez.
+      - generic [ref=e501]:
+        - generic [ref=e503]:
+          - generic [ref=e504]:
+            - generic [ref=e505]:
+              - generic [ref=e506]: Nom complet
+              - textbox "Nom complet" [ref=e507]:
+                - /placeholder: Vos nom et prénom
+            - generic [ref=e508]:
+              - generic [ref=e509]: Téléphone / WhatsApp
+              - textbox "Téléphone / WhatsApp" [ref=e510]:
+                - /placeholder: 07 …
+            - generic [ref=e511]:
+              - generic [ref=e512]: Service souhaité
+              - combobox "Service souhaité" [ref=e513]:
+                - option "Choisir un service…" [selected]
+                - option "Courses au marché"
+                - option "Pharmacie & ordonnances"
+                - option "Démarches administratives"
+                - option "Shopping & cadeaux"
+                - option "Dépôt & retrait de colis"
+                - option "Retrait de documents"
+                - option "Autres courses"
+                - option "Secrétariat à distance (abonnement)"
+            - generic [ref=e514]:
+              - generic [ref=e515]: Zone / commune
+              - combobox "Zone / commune" [ref=e516]:
+                - option "Choisir votre zone…" [selected]
+                - option "Zone Standard"
+                - option "Zone Étendue"
+                - option "Zone Spéciale"
+            - generic [ref=e517]:
+              - generic [ref=e518]: Quand ?
+              - combobox "Quand ?" [ref=e519]:
+                - option "Choisir…" [selected]
+                - option "Dès que possible"
+                - option "Urgent — dans l'heure (+50 %)"
+                - option "Aujourd'hui"
+                - option "Cette semaine"
+            - generic [ref=e520]:
+              - generic [ref=e521]: Email (optionnel)
+              - textbox "Email (optionnel)" [ref=e522]:
+                - /placeholder: nom@domaine.com
+            - generic [ref=e523]:
+              - generic [ref=e524]: Votre besoin en détail
+              - textbox "Votre besoin en détail" [ref=e525]:
+                - /placeholder: "Décrivez votre besoin : liste de courses, adresse de retrait/livraison, démarche précise, budget approximatif…"
+          - paragraph [ref=e526]:
+            - img [ref=e527]
+            - text: Vos informations restent confidentielles et ne servent qu'à traiter votre demande.
+          - generic [ref=e530]:
+            - button "Envoyer ma demande" [ref=e531] [cursor=pointer]:
+              - img [ref=e532]
+              - text: Envoyer ma demande
+            - button "…ou via WhatsApp" [ref=e534] [cursor=pointer]:
+              - img [ref=e535]
+              - text: …ou via WhatsApp
+          - generic [ref=e537]:
+            - img [ref=e538]
+            - text: Merci ! Votre demande est bien reçue. Mon Commis vous recontacte rapidement.
+        - complementary [ref=e540]:
+          - generic [ref=e541]: Joignez-nous
+          - heading "Un commis de confiance, à portée de message" [level=3] [ref=e542]:
+            - text: Un commis de confiance,
+            - generic [ref=e543]: à portée de message
+          - paragraph [ref=e544]: "Le plus rapide : WhatsApp. Décrivez votre course, votre démarche ou votre colis, on s'occupe du reste."
+          - link "Discuter sur WhatsApp 07 47 79 10 73 — appels & WhatsApp" [ref=e545] [cursor=pointer]:
+            - /url: https://wa.me/2250747791073
+            - img [ref=e547]
+            - generic [ref=e549]:
+              - strong [ref=e550]: Discuter sur WhatsApp
+              - generic [ref=e551]: 07 47 79 10 73 — appels & WhatsApp
+            - img [ref=e553]
+          - generic [ref=e555]:
+            - link "Téléphone 07 47 79 10 73" [ref=e556] [cursor=pointer]:
+              - /url: tel:+2250747791073
+              - img [ref=e557]
+              - generic [ref=e559]:
+                - strong [ref=e560]: Téléphone
+                - generic [ref=e561]: 07 47 79 10 73
+            - generic [ref=e562]:
+              - img [ref=e563]
+              - generic [ref=e566]:
+                - strong [ref=e567]: Zone d'action
+                - generic [ref=e568]: Toutes les communes d'Abidjan
+            - generic [ref=e569]:
+              - img [ref=e570]
+              - generic [ref=e573]:
+                - strong [ref=e574]: Réactivité
+                - generic [ref=e575]: Réponse rapide, 7j/7
+          - generic [ref=e576]:
+            - generic [ref=e577]:
+              - img [ref=e578]
+              - text: Devis clair en FCFA
+            - generic [ref=e580]:
+              - img [ref=e581]
+              - text: Discrétion
+            - generic [ref=e584]:
+              - img [ref=e585]
+              - text: Express possible
+  - contentinfo [ref=e587]:
+    - generic [ref=e590]:
+      - generic [ref=e591]:
+        - link "MON COMMIS — accueil" [ref=e592] [cursor=pointer]:
+          - /url: index.html
+          - generic [ref=e593]:
+            - text: Mon
+            - strong [ref=e594]: Commis
+        - paragraph [ref=e595]: Conciergerie & courses à Abidjan. Vos courses, démarches, colis et rendez-vous confiés à un commis de confiance — vous gagnez un temps précieux.
+        - paragraph [ref=e596]:
+          - text: Au cœur d'Abidjan,
+          - generic [ref=e597]: à votre service.
+      - generic [ref=e598]:
+        - heading "Nos services" [level=4] [ref=e599]
+        - link "Courses au marché" [ref=e600] [cursor=pointer]:
+          - /url: services.html#courses-marche
+        - link "Pharmacie & ordonnances" [ref=e601] [cursor=pointer]:
+          - /url: services.html#pharmacie
+        - link "Démarches administratives" [ref=e602] [cursor=pointer]:
+          - /url: services.html#demarches
+        - link "Shopping & cadeaux" [ref=e603] [cursor=pointer]:
+          - /url: services.html#shopping
+        - link "Dépôt & retrait de colis" [ref=e604] [cursor=pointer]:
+          - /url: services.html#colis
+        - link "Retrait de documents" [ref=e605] [cursor=pointer]:
+          - /url: services.html#documents
+      - generic [ref=e606]:
+        - heading "Mon Commis" [level=4] [ref=e607]
+        - link "Secrétariat à distance" [ref=e608] [cursor=pointer]:
+          - /url: secretariat.html
+        - link "À propos" [ref=e609] [cursor=pointer]:
+          - /url: a-propos.html
+        - link "Zones de couverture" [ref=e610] [cursor=pointer]:
+          - /url: services.html#zones
+        - link "Demander un commis" [ref=e611] [cursor=pointer]:
+          - /url: contact.html
+      - generic [ref=e612]:
+        - heading "Contact" [level=4] [ref=e613]
+        - link "07 47 79 10 73" [ref=e614] [cursor=pointer]:
+          - /url: tel:+2250747791073
+          - img [ref=e616]
+          - generic [ref=e618]: 07 47 79 10 73
+        - link "WhatsApp" [ref=e619] [cursor=pointer]:
+          - /url: https://wa.me/2250747791073
+          - img [ref=e620]
+          - text: WhatsApp
+        - generic [ref=e622]:
+          - img [ref=e623]
+          - text: Abidjan, Côte d'Ivoire
+        - generic [ref=e626]:
+          - link "WhatsApp" [ref=e627] [cursor=pointer]:
+            - /url: https://wa.me/2250747791073
+            - img [ref=e628]
+          - link "TikTok" [ref=e630] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e631]
+          - link "Instagram" [ref=e633] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e634]
+          - link "Facebook" [ref=e636] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e637]
+    - generic [ref=e640]:
+      - generic [ref=e641]: © 2026 MON COMMIS — Abidjan, Côte d'Ivoire. Tous droits réservés.
+      - link "Demander un commis" [ref=e642] [cursor=pointer]:
+        - /url: contact.html
+  - link "WhatsApp" [ref=e643] [cursor=pointer]:
+    - /url: https://wa.me/2250747791073
+    - img [ref=e644]

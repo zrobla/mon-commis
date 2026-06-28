@@ -1,0 +1,21 @@
+# Secrets & base de données — NE JAMAIS committer (§E.5)
+.env
+db.sqlite3
+*.sqlite3
+
+# Python / venv
+.commis/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Django
+/media/
+/staticfiles/
+
+# Captures de travail / temporaires
+mc-*.png
+site/.playwright-mcp/
+
+# OS
+.DS_Store

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Mon Commis">
+  <defs>
+    <linearGradient id="mcRing" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#56c8e8"/>
+      <stop offset="0.5" stop-color="#1f9ec4"/>
+      <stop offset="1" stop-color="#15506e"/>
+    </linearGradient>
+  </defs>
+  <!-- disque blanc + anneau cyan->navy -->
+  <circle cx="60" cy="60" r="50" fill="#ffffff"/>
+  <circle cx="60" cy="60" r="50" fill="none" stroke="url(#mcRing)" stroke-width="9"/>
+  <g fill="#112844">
+    <!-- mains en coupe qui bercent -->
+    <path d="M22 58
+             C 22 98, 98 98, 98 58
+             C 95 67, 88 70, 85 63
+             C 78 82, 42 82, 35 63
+             C 32 70, 25 67, 22 58 Z"/>
+    <!-- coeur bercé -->
+    <path d="M60 36
+             c-4 -8 -16 -7 -16 3
+             c0 8 10 13 16 19
+             c6 -6 16 -11 16 -19
+             c0 -10 -12 -11 -16 -3 z"/>
+  </g>
+</svg>

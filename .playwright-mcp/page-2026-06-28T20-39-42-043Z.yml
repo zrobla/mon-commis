@@ -1,0 +1,254 @@
+- generic [active] [ref=e1]:
+  - link "Aller au contenu" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "MON COMMIS — accueil" [ref=e6] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=e7]:
+          - text: Mon
+          - strong [ref=e8]: Commis
+      - navigation "Navigation principale" [ref=e9]:
+        - link "Accueil" [ref=e10] [cursor=pointer]:
+          - /url: index.html
+        - link "Services" [ref=e11] [cursor=pointer]:
+          - /url: services.html
+        - link "Secrétariat" [ref=e12] [cursor=pointer]:
+          - /url: secretariat.html
+        - link "À propos" [ref=e13] [cursor=pointer]:
+          - /url: a-propos.html
+        - link "Contact" [ref=e14] [cursor=pointer]:
+          - /url: contact.html
+        - link "Demander un commis" [ref=e15] [cursor=pointer]:
+          - /url: contact.html
+          - img [ref=e16]
+          - text: Demander un commis
+  - main [ref=e18]:
+    - generic [ref=e21]:
+      - generic [ref=e22]: Pôle Secrétariat à Distance
+      - heading "Un secrétariat personnel, par abonnement" [level=1] [ref=e23]
+      - paragraph [ref=e24]: Vos rendez-vous saisis, rappelés et confirmés. Choisissez la formule qui vous correspond et ne ratez plus jamais un rendez-vous.
+    - generic [ref=e26]:
+      - generic [ref=e28]:
+        - generic [ref=e29]: Pôle Secrétariat à Distance
+        - heading "Votre agenda, géré pour vous" [level=2] [ref=e30]
+        - paragraph [ref=e31]: "Un secrétariat personnel par abonnement mensuel : vos rendez-vous saisis, rappelés et confirmés — vous ne ratez plus rien."
+      - generic [ref=e32]:
+        - article [ref=e33]:
+          - heading "STARTER" [level=3] [ref=e34]
+          - paragraph [ref=e35]: L'essentiel pour ne plus rien oublier.
+          - generic [ref=e36]:
+            - strong [ref=e37]: 15 000
+            - generic [ref=e38]: FCFA / mois
+          - paragraph [ref=e39]:
+            - img [ref=e40]
+            - text: Jusqu'à 8 RDV / mois
+          - list [ref=e43]:
+            - listitem [ref=e44]:
+              - img [ref=e45]
+              - generic [ref=e47]: Récapitulatif chaque dimanche
+            - listitem [ref=e48]:
+              - img [ref=e49]
+              - generic [ref=e51]: Rappels 30 min avant chaque RDV
+            - listitem [ref=e52]:
+              - img [ref=e53]
+              - generic [ref=e55]: Confirmation téléphonique
+            - listitem [ref=e56]:
+              - img [ref=e57]
+              - generic [ref=e59]: Gestion du carnet de contacts
+            - listitem [ref=e60]:
+              - img [ref=e61]
+              - generic [ref=e63]: Recherche d'infos / tarifs
+          - link "Choisir STARTER" [ref=e64] [cursor=pointer]:
+            - /url: contact.html?formule=starter
+            - img [ref=e65]
+            - text: Choisir STARTER
+        - article [ref=e67]:
+          - generic [ref=e68]: Le plus choisi
+          - heading "CONFORT" [level=3] [ref=e69]
+          - paragraph [ref=e70]: Le bon équilibre pour un agenda maîtrisé.
+          - generic [ref=e71]:
+            - strong [ref=e72]: 25 000
+            - generic [ref=e73]: FCFA / mois
+          - paragraph [ref=e74]:
+            - img [ref=e75]
+            - text: Jusqu'à 20 RDV / mois
+          - list [ref=e78]:
+            - listitem [ref=e79]:
+              - img [ref=e80]
+              - generic [ref=e82]: Récapitulatif chaque dimanche
+            - listitem [ref=e83]:
+              - img [ref=e84]
+              - generic [ref=e86]: Rappels 30 min avant chaque RDV
+            - listitem [ref=e87]:
+              - img [ref=e88]
+              - generic [ref=e90]: Confirmation téléphonique
+            - listitem [ref=e91]:
+              - img [ref=e92]
+              - generic [ref=e94]: Gestion du carnet de contacts
+            - listitem [ref=e95]:
+              - img [ref=e96]
+              - generic [ref=e98]: Recherche d'infos / tarifs
+          - link "Choisir CONFORT" [ref=e99] [cursor=pointer]:
+            - /url: contact.html?formule=confort
+            - img [ref=e100]
+            - text: Choisir CONFORT
+        - article [ref=e102]:
+          - heading "PREMIUM" [level=3] [ref=e103]
+          - paragraph [ref=e104]: La sérénité totale, sans aucune limite.
+          - generic [ref=e105]:
+            - strong [ref=e106]: 50 000
+            - generic [ref=e107]: FCFA / mois
+          - paragraph [ref=e108]:
+            - img [ref=e109]
+            - text: RDV illimités
+          - list [ref=e112]:
+            - listitem [ref=e113]:
+              - img [ref=e114]
+              - generic [ref=e116]: Récapitulatif chaque dimanche
+            - listitem [ref=e117]:
+              - img [ref=e118]
+              - generic [ref=e120]: Rappels 30 min avant chaque RDV
+            - listitem [ref=e121]:
+              - img [ref=e122]
+              - generic [ref=e124]: Confirmation téléphonique
+            - listitem [ref=e125]:
+              - img [ref=e126]
+              - generic [ref=e128]: Gestion du carnet de contacts
+            - listitem [ref=e129]:
+              - img [ref=e130]
+              - generic [ref=e132]: Recherche d'infos / tarifs
+          - link "Choisir PREMIUM" [ref=e133] [cursor=pointer]:
+            - /url: contact.html?formule=premium
+            - img [ref=e134]
+            - text: Choisir PREMIUM
+      - generic [ref=e136]:
+        - heading "Inclus dans toutes les formules" [level=3] [ref=e137]
+        - list [ref=e138]:
+          - listitem [ref=e139]:
+            - img [ref=e140]
+            - generic [ref=e143]:
+              - strong [ref=e144]: Agenda partagé
+              - text: Saisie de vos rendez-vous dans Google Calendar, partagé avec vous.
+          - listitem [ref=e145]:
+            - img [ref=e146]
+            - generic [ref=e149]:
+              - strong [ref=e150]: Programme du dimanche
+              - text: Le programme de votre semaine envoyé chaque dimanche après-midi via WhatsApp.
+          - listitem [ref=e151]:
+            - img [ref=e152]
+            - generic [ref=e155]:
+              - strong [ref=e156]: Rappel 30 minutes avant
+              - text: Un rappel personnalisé avant chaque rendez-vous, pour ne rien manquer.
+          - listitem [ref=e157]:
+            - img [ref=e158]
+            - generic [ref=e162]:
+              - strong [ref=e163]: Modifications en temps réel
+              - text: Gestion des reports et annulations de rendez-vous, en temps réel.
+          - listitem [ref=e164]:
+            - img [ref=e165]
+            - generic [ref=e167]:
+              - strong [ref=e168]: Formulaire de collecte
+              - text: Un formulaire dédié pour nous transmettre vos rendez-vous facilement.
+    - generic [ref=e170]:
+      - generic [ref=e172]:
+        - generic [ref=e173]: Comment ça marche
+        - heading "Trois étapes, zéro stress" [level=2] [ref=e174]
+      - generic [ref=e175]:
+        - article [ref=e176]:
+          - generic [ref=e177]: "01"
+          - img [ref=e179]
+          - heading "Vous décrivez" [level=3] [ref=e181]
+          - paragraph [ref=e182]: Envoyez votre besoin par WhatsApp ou via le formulaire — en quelques mots, c'est parti.
+        - article [ref=e183]:
+          - generic [ref=e184]: "02"
+          - img [ref=e186]
+          - heading "On confirme & vous réglez" [level=3] [ref=e189]
+          - paragraph [ref=e190]: Devis clair en FCFA. Les frais de commission sont réglés avant le début de la mission.
+        - article [ref=e191]:
+          - generic [ref=e192]: "03"
+          - img [ref=e194]
+          - heading "Votre commis exécute" [level=3] [ref=e198]
+          - paragraph [ref=e199]: Un commis de confiance s'occupe de tout et vous tient informé jusqu'à la remise en main propre.
+    - generic [ref=e202]:
+      - generic [ref=e203]: Passons à l'action
+      - heading "Prêt à déléguer votre agenda ?" [level=2] [ref=e204]
+      - paragraph [ref=e205]: Choisissez votre formule Secrétariat — STARTER, CONFORT ou PREMIUM — et reprenez le contrôle de votre temps.
+      - generic [ref=e206]:
+        - link "Demander un commis" [ref=e207] [cursor=pointer]:
+          - /url: contact.html
+          - img [ref=e208]
+          - text: Demander un commis
+        - link "WhatsApp" [ref=e210] [cursor=pointer]:
+          - /url: https://wa.me/2250747791073
+          - img [ref=e211]
+          - text: WhatsApp
+  - contentinfo [ref=e213]:
+    - generic [ref=e216]:
+      - generic [ref=e217]:
+        - link "MON COMMIS — accueil" [ref=e218] [cursor=pointer]:
+          - /url: index.html
+          - generic [ref=e219]:
+            - text: Mon
+            - strong [ref=e220]: Commis
+        - paragraph [ref=e221]: Conciergerie & courses à Abidjan. Vos courses, démarches, colis et rendez-vous confiés à un commis de confiance — vous gagnez un temps précieux.
+        - paragraph [ref=e222]:
+          - text: Au cœur d'Abidjan,
+          - generic [ref=e223]: à votre service.
+      - generic [ref=e224]:
+        - heading "Nos services" [level=4] [ref=e225]
+        - link "Courses au marché" [ref=e226] [cursor=pointer]:
+          - /url: services.html#courses-marche
+        - link "Pharmacie & ordonnances" [ref=e227] [cursor=pointer]:
+          - /url: services.html#pharmacie
+        - link "Démarches administratives" [ref=e228] [cursor=pointer]:
+          - /url: services.html#demarches
+        - link "Shopping & cadeaux" [ref=e229] [cursor=pointer]:
+          - /url: services.html#shopping
+        - link "Dépôt & retrait de colis" [ref=e230] [cursor=pointer]:
+          - /url: services.html#colis
+        - link "Retrait de documents" [ref=e231] [cursor=pointer]:
+          - /url: services.html#documents
+      - generic [ref=e232]:
+        - heading "Mon Commis" [level=4] [ref=e233]
+        - link "Secrétariat à distance" [ref=e234] [cursor=pointer]:
+          - /url: secretariat.html
+        - link "À propos" [ref=e235] [cursor=pointer]:
+          - /url: a-propos.html
+        - link "Zones de couverture" [ref=e236] [cursor=pointer]:
+          - /url: services.html#zones
+        - link "Demander un commis" [ref=e237] [cursor=pointer]:
+          - /url: contact.html
+      - generic [ref=e238]:
+        - heading "Contact" [level=4] [ref=e239]
+        - link "07 47 79 10 73" [ref=e240] [cursor=pointer]:
+          - /url: tel:+2250747791073
+          - img [ref=e242]
+          - generic [ref=e244]: 07 47 79 10 73
+        - link "WhatsApp" [ref=e245] [cursor=pointer]:
+          - /url: https://wa.me/2250747791073
+          - img [ref=e246]
+          - text: WhatsApp
+        - generic [ref=e248]:
+          - img [ref=e249]
+          - text: Abidjan, Côte d'Ivoire
+        - generic [ref=e252]:
+          - link "WhatsApp" [ref=e253] [cursor=pointer]:
+            - /url: https://wa.me/2250747791073
+            - img [ref=e254]
+          - link "TikTok" [ref=e256] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e257]
+          - link "Instagram" [ref=e259] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e260]
+          - link "Facebook" [ref=e262] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e263]
+    - generic [ref=e266]:
+      - generic [ref=e267]: © 2026 MON COMMIS — Abidjan, Côte d'Ivoire. Tous droits réservés.
+      - link "Demander un commis" [ref=e268] [cursor=pointer]:
+        - /url: contact.html
+  - link "WhatsApp" [ref=e269] [cursor=pointer]:
+    - /url: https://wa.me/2250747791073
+    - img [ref=e270]
