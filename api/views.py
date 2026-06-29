@@ -60,13 +60,17 @@ def demandes(request):
 
     # Construit une description lisible pour la promotrice.
     parts = []
+    # « resume » = récapitulatif structuré des champs du formulaire (prestation, champs
+    # spécifiques au service, etc.) assemblé côté vitrine. On le conserve tel quel.
+    if data.get("resume"):
+        parts.append(data["resume"].strip())
     if data.get("message"):
-        parts.append(data["message"].strip())
-    if echeance:
+        parts.append("Précisions : " + data["message"].strip())
+    if echeance and "resume" not in data:
         parts.append(f"Quand : {echeance}")
-    if service_label:
+    if service_label and "resume" not in data:
         parts.append(f"Service demandé : {service_label}")
-    if data.get("email"):
+    if data.get("email") and "resume" not in data:
         parts.append(f"Email : {data['email'].strip()}")
     description = "\n".join(parts)
 

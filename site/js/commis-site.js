@@ -994,6 +994,25 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // ---- Pages services : « Commander ce service » pré-remplit la prestation ----
+    document.querySelectorAll("[data-order-prestation]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            var val = btn.getAttribute("data-order-prestation");
+            var sel = document.querySelector("#prestation-select");
+            if (sel) {
+                var matched = false;
+                for (var i = 0; i < sel.options.length; i++) {
+                    if (sel.options[i].value === val) { sel.selectedIndex = i; matched = true; break; }
+                }
+                if (matched) {
+                    sel.dispatchEvent(new Event("change", { bubbles: true }));
+                    sel.classList.add("is-prefilled");
+                    window.setTimeout(function () { sel.classList.remove("is-prefilled"); }, 1400);
+                }
+            }
+        });
+    });
+
     // ---- Articles : barre de progression de lecture ----
     var readBar = document.querySelector("[data-read-bar]");
     if (readBar) {

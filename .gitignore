@@ -15,7 +15,8 @@ __pycache__/
 
 # Captures de travail / temporaires
 mc-*.png
-site/.playwright-mcp/
+v[0-9]*-*.png
+.playwright-mcp/
 
 # OS
 .DS_Store

@@ -16,6 +16,7 @@ Régénère tout :  python3 build_commis.py
 import os
 import json
 import math
+from urllib.parse import quote
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -32,7 +33,7 @@ SITE = {
     "geo": {"lat": "5.3599517", "lng": "-4.0082563"},
     "year": "2026",
 }
-ASSETV = "20260628b1"  # cache-busting — incrémenter à chaque modif CSS/JS
+ASSETV = "20260629c3"  # cache-busting — incrémenter à chaque modif CSS/JS
 
 # ---------------------------------------------------------------- Icônes SVG
 _I = {
@@ -86,91 +87,96 @@ SERVICES = [
  {
   "slug": "courses", "title": "Courses", "short": "Courses", "icon": "cart",
   "img": "img/services/courses.jpg",
-  "tagline": "Marché, pharmacie, quotidien : vos courses faites et livrées.",
-  "lead": "Du marché à la pharmacie, Mon Commis se charge de toutes vos courses du quotidien. "
-          "Vous transmettez votre liste, nous sélectionnons avec soin et nous livrons chez vous — "
+  "tagline": "Approvisionnement du quotidien — marché, officine, supérette — sélectionné et livré.",
+  "lead": "Mon Commis prend en charge l'intégralité de votre approvisionnement quotidien : marché vivrier, "
+          "officine pharmaceutique et commerces de proximité. Vous transmettez votre liste et votre budget ; "
+          "nous assurons la sélection des produits, le contrôle de la fraîcheur et la livraison à votre adresse, "
           "dans toutes les communes d'Abidjan.",
   "sub": [
-    ("cart", "Courses au marché", "Achats alimentaires, condiments, légumes et produits frais, choisis avec exigence et selon votre budget."),
-    ("pill", "Pharmacie & ordonnances", "Retrait de vos médicaments et exécution de vos ordonnances, en toute discrétion — pharmacie de garde au besoin."),
-    ("doc", "Courses du quotidien", "Supérette, boulangerie, petites emplettes récurrentes : confiez-nous vos achats réguliers et gagnez du temps."),
+    ("cart", "Approvisionnement au marché", "Achat de denrées vivrières, produits frais et condiments, avec contrôle de la qualité et respect strict du budget alloué."),
+    ("pill", "Officine & exécution d'ordonnances", "Exécution de vos ordonnances et retrait de médicaments en officine, dans le respect de la confidentialité — recours à la pharmacie de garde si nécessaire."),
+    ("doc", "Achats récurrents", "Réassort planifié en supérette et commerces de proximité, pour les particuliers comme pour les professionnels."),
   ],
-  "inclus": ["Sélection soignée selon votre budget", "Livraison dans votre commune", "Confidentialité pour vos achats sensibles"],
+  "inclus": ["Sélection contrôlée selon votre budget", "Livraison dans votre commune", "Confidentialité des achats sensibles"],
   "gallery": ["courses.jpg", "pharmacie.jpg", "marche-2.jpg"],
  },
  {
   "slug": "demarches", "title": "Démarches administratives", "short": "Démarches", "icon": "stamp",
   "img": "img/services/demarches.jpg",
-  "tagline": "Vos dossiers déposés, suivis et retirés — sans la file d'attente.",
-  "lead": "Mairie, CNPS, impôts, préfecture, tribunal, notaire, hôpitaux : nous prenons en charge "
-          "le dépôt, le suivi et le retrait de vos dossiers et documents officiels. Vous gardez le contrôle, "
-          "nous gérons l'attente et les déplacements.",
+  "tagline": "Dépôt, instruction et retrait de vos dossiers administratifs — sans file d'attente.",
+  "lead": "Mon Commis agit comme votre mandataire pour vos formalités administratives : mairie, CNPS, "
+          "administration fiscale, préfecture, juridictions et études notariales. Nous assurons le dépôt des "
+          "pièces, le suivi de l'instruction et le retrait de vos documents officiels, en vous tenant informé "
+          "à chaque étape de la procédure.",
   "sub": [
-    ("stamp", "Dépôt & retrait de dossiers", "Mairie, CNPS, impôts, préfecture, tribunal, notaire, hôpitaux : vos démarches menées de bout en bout."),
-    ("doc", "Documents officiels", "Actes de naissance, casiers judiciaires, diplômes et autres documents officiels retirés pour vous."),
-    ("shield", "Résultats médicaux", "Récupération discrète de vos résultats d'analyses et documents de santé."),
+    ("stamp", "Dépôt & retrait de dossiers", "Constitution, dépôt et retrait de vos dossiers auprès des administrations : mairie, CNPS, impôts, préfecture, juridictions, notaire et structures hospitalières."),
+    ("doc", "Documents officiels", "Obtention d'actes d'état civil, d'extraits de casier judiciaire, de copies de diplômes et autres pièces justificatives, sur présentation des mandats requis."),
+    ("shield", "Résultats & pièces médicales", "Récupération confidentielle de vos résultats d'analyses et documents de santé, dans le respect du secret médical."),
   ],
-  "inclus": ["File d'attente gérée pour vous", "Suivi de l'avancement du dossier", "Traitement confidentiel des pièces"],
+  "inclus": ["Gestion de la file d'attente et des guichets", "Suivi de l'instruction du dossier", "Traitement confidentiel des pièces justificatives"],
   "gallery": [],
  },
  {
   "slug": "shopping", "title": "Shopping & cadeaux", "short": "Shopping", "icon": "gift",
   "img": "img/services/shopping.jpg",
-  "tagline": "Le bon article, le beau cadeau — choisis et livrés pour vous.",
-  "lead": "Un article précis, une tenue, un objet déco ou un cadeau à offrir ? Décrivez-nous votre envie "
-          "et votre budget : nous sélectionnons, nous négocions et nous livrons — emballage cadeau en option.",
+  "tagline": "Sourcing, négociation et livraison de l'article ou du cadeau recherché.",
+  "lead": "Vous recherchez un article précis, un équipement ou un cadeau ? Mon Commis prend en charge le "
+          "sourcing : identification du produit conforme à votre cahier des charges et à votre budget, "
+          "négociation du prix, achat et livraison — avec conditionnement cadeau en option.",
   "sub": [
-    ("gift", "Articles & vêtements", "Achat d'articles vestimentaires et accessoires selon votre description et votre budget."),
-    ("sparkle", "Décoration & maison", "Objets déco, équipement de la maison, trouvailles : on déniche ce qu'il vous faut."),
-    ("heart", "Cadeaux & emballage", "Sélection d'un cadeau qui fait plaisir, avec emballage soigné sur demande."),
+    ("gift", "Articles & équipements", "Recherche et achat d'articles vestimentaires, d'accessoires et d'équipements selon vos spécifications et votre budget."),
+    ("sparkle", "Aménagement & décoration", "Sourcing d'objets de décoration et d'équipement de la maison : nous identifions les références correspondant à votre projet."),
+    ("heart", "Cadeaux & conditionnement", "Sélection d'un cadeau adapté à l'occasion et au destinataire, avec conditionnement soigné sur demande."),
   ],
-  "inclus": ["Conseil & sélection personnalisée", "Tarif prestation 5 000 à 15 000 FCFA selon complexité", "Emballage cadeau possible"],
+  "inclus": ["Conseil & sourcing personnalisé", "Tarif prestation 5 000 à 15 000 FCFA selon complexité", "Conditionnement cadeau possible"],
   "gallery": ["shopping.jpg", "cadeaux.jpg", "shopping-bag.jpg"],
  },
  {
   "slug": "colis", "title": "Dépôt & retrait de colis", "short": "Colis", "icon": "box",
   "img": "img/services/colis.jpg",
-  "tagline": "Vos colis acheminés d'un point à un autre, en main propre.",
-  "lead": "Un pli, un paquet, un objet à faire parvenir quelque part dans Abidjan ? Mon Commis assure "
-          "l'acheminement de vos colis entre deux adresses, en toute sécurité et avec remise en main propre.",
+  "tagline": "Acheminement sécurisé de vos plis et colis, avec remise contre signature.",
+  "lead": "Mon Commis assure l'acheminement de vos plis, paquets et objets entre deux adresses dans Abidjan. "
+          "Chaque envoi fait l'objet d'une prise en charge sécurisée, d'un suivi de bout en bout et d'une "
+          "remise en main propre contre confirmation du destinataire.",
   "sub": [
-    ("route", "Acheminement point à point", "Récupération à une adresse, livraison à une autre, au sein des zones couvertes."),
-    ("shield", "Remise en main propre", "Votre colis remis à la bonne personne, en toute sécurité."),
-    ("check", "Suivi de bout en bout", "Vous êtes informé du retrait jusqu'à la livraison."),
+    ("route", "Acheminement point à point", "Enlèvement à l'adresse d'origine et livraison à l'adresse de destination, au sein des zones desservies."),
+    ("shield", "Remise contre signature", "Remise du colis au destinataire désigné, avec confirmation de livraison."),
+    ("check", "Traçabilité de bout en bout", "Information du donneur d'ordre, de l'enlèvement jusqu'à la livraison effective."),
   ],
-  "inclus": ["Transport sécurisé", "Remise en main propre", "Frais selon la zone de livraison"],
+  "inclus": ["Prise en charge sécurisée", "Remise en main propre", "Frais selon la zone de livraison"],
   "gallery": ["colis.jpg", "colis-2.jpg"],
  },
  {
   "slug": "secretariat", "title": "Secrétariat à distance", "short": "Secrétariat", "icon": "calendar",
   "img": "img/services/secretariat.jpg",
-  "tagline": "Votre agenda saisi, rappelé et confirmé — vous ne ratez plus rien.",
-  "lead": "Un secrétariat personnel par abonnement mensuel : nous saisissons vos rendez-vous, vous envoyons "
-          "le programme de la semaine, vous rappelons avant chaque rendez-vous et confirmons pour vous. "
-          "Trois formules — STARTER, CONFORT, PREMIUM — selon votre rythme.",
+  "tagline": "Gestion d'agenda externalisée : saisie, rappels et confirmation de vos rendez-vous.",
+  "lead": "Le pôle Secrétariat à Distance de Mon Commis prend en charge la gestion externalisée de votre "
+          "agenda professionnel : saisie de vos rendez-vous, transmission du programme hebdomadaire, rappels "
+          "avant échéance et confirmation auprès de vos interlocuteurs. Trois formules d'abonnement mensuel — "
+          "STARTER, CONFORT, PREMIUM — calibrées selon votre volume d'activité.",
   "sub": [
-    ("calendar", "Gestion d'agenda", "Saisie de vos rendez-vous dans Google Calendar, partagé avec vous, et programme envoyé chaque dimanche."),
-    ("bell", "Rappels & confirmations", "Rappel personnalisé 30 min avant chaque rendez-vous ; confirmation téléphonique selon la formule."),
-    ("star", "Formules sur-mesure", "STARTER, CONFORT ou PREMIUM : carnet de contacts et recherche d'infos sur les formules supérieures."),
+    ("calendar", "Gestion d'agenda", "Saisie de vos rendez-vous dans un agenda partagé (Google Calendar) et transmission du programme hebdomadaire chaque dimanche."),
+    ("bell", "Rappels & confirmations", "Rappel personnalisé 30 minutes avant chaque échéance et confirmation téléphonique auprès de vos interlocuteurs, selon la formule souscrite."),
+    ("star", "Formules calibrées", "STARTER, CONFORT ou PREMIUM : gestion du carnet de contacts et recherche d'informations sur les formules supérieures."),
   ],
   "inclus": ["Agenda partagé (Google Calendar)", "Rappels 30 min avant chaque RDV", "Formules dès 15 000 FCFA/mois"],
-  "gallery": [],
+  "gallery": ["secretariat-2.jpg", "secretariat-3.jpg"],
   "is_secretariat": True,
  },
  {
   "slug": "autres", "title": "Autres services", "short": "Autres", "icon": "grid",
   "img": "img/services/autres.jpg",
-  "tagline": "Une tâche particulière ? On la prend en charge, sur-mesure.",
-  "lead": "Votre besoin ne rentre dans aucune case ? C'est notre spécialité. Décrivez votre demande : "
-          "nous l'organisons à la précision de votre besoin — missions ponctuelles ou récurrentes, "
-          "pour particuliers comme pour professionnels.",
+  "tagline": "Missions sur-mesure : un cahier des charges, une solution adaptée.",
+  "lead": "Votre besoin sort du cadre habituel ? Mon Commis conçoit une prestation sur-mesure à partir de "
+          "votre cahier des charges : analyse de la demande, organisation logistique et exécution, pour des "
+          "missions ponctuelles ou récurrentes, au bénéfice des particuliers comme des professionnels.",
   "sub": [
-    ("sparkle", "Tâches sur-mesure", "Une demande inhabituelle ? On s'adapte et on trouve la solution."),
-    ("clock", "Missions ponctuelles ou récurrentes", "Une fois ou chaque semaine : vous fixez le rythme."),
-    ("users", "Particuliers & professionnels", "Un service flexible, calibré à votre budget et à vos contraintes."),
+    ("sparkle", "Missions sur-mesure", "Analyse de votre demande et mise en place d'une solution adaptée, même pour les besoins atypiques."),
+    ("clock", "Ponctuel ou récurrent", "Interventions à la demande ou planifiées selon une périodicité définie avec vous."),
+    ("users", "Particuliers & professionnels", "Prestations calibrées en fonction de vos contraintes opérationnelles et de votre budget."),
   ],
-  "inclus": ["Devis clair en FCFA", "Flexibilité totale", "Interlocuteur unique"],
-  "gallery": [],
+  "inclus": ["Devis clair en FCFA", "Flexibilité opérationnelle", "Interlocuteur unique"],
+  "gallery": ["autres-2.jpg"],
  },
 ]
 SERVICES_BY_SLUG = {s["slug"]: s for s in SERVICES}
@@ -235,10 +241,17 @@ SECRET_INCLUS = [
  ("list", "Formulaire de collecte", "Un formulaire dédié pour nous transmettre vos rendez-vous facilement."),
 ]
 
+# (nom, communes, frais_badge, icône, descriptif professionnel)
 ZONES = [
- ("Zone Standard", "Cocody, Plateau, Marcory, Treichville, Adjamé, Attécoubé", "Inclus dans le tarif de base", "shield"),
- ("Zone Étendue", "Yopougon, Abobo, Bingerville, Anyama, Songon, Dabou, Grand-Bassam", "+ 1 000 à 2 000 FCFA selon distance", "map"),
- ("Zone Spéciale", "Toute destination hors du périmètre ci-dessus", "Sur devis préalable", "route"),
+ ("Zone Standard", "Cocody · Plateau · Marcory · Treichville · Adjamé · Attécoubé",
+  "Inclus", "shield",
+  "Périmètre central d'Abidjan — prestation au tarif de base, sans supplément de déplacement."),
+ ("Zone Étendue", "Yopougon · Abobo · Bingerville · Anyama · Songon · Dabou · Grand-Bassam",
+  "+1 000–2 000 FCFA", "map",
+  "Couronne périphérique — supplément de déplacement appliqué selon la distance."),
+ ("Zone Spéciale", "Toute destination hors du périmètre couvert",
+  "Sur devis", "route",
+  "Intervention sur devis préalable, établi en fonction de la destination."),
 ]
 
 STEPS = [
@@ -255,10 +268,10 @@ ARGS = [
 ]
 
 GALLERY = [
- ("courses.jpg", "Courses au marché", "Étal de fruits et légumes frais au marché à Abidjan"),
+ ("marche.jpg", "Courses au marché", "Étal de fruits et légumes frais au marché à Abidjan"),
  ("pharmacie.jpg", "Pharmacie & ordonnances", "Retrait de médicaments et conseils en pharmacie"),
  ("cadeaux.jpg", "Shopping & cadeaux", "Cadeaux soigneusement sélectionnés et emballés"),
- ("marche-2.jpg", "Produits frais choisis avec soin", "Sélection de légumes frais au marché"),
+ ("colis.jpg", "Dépôt & retrait de colis", "Acheminement de colis en main propre à Abidjan"),
  ("shopping-bag.jpg", "Vos achats, livrés chez vous", "Sacs de shopping prêts à être livrés"),
 ]
 
@@ -268,11 +281,226 @@ TESTIMONIALS = [
  ("La formule Secrétariat CONFORT a changé mon organisation : je ne rate plus aucun rendez-vous.", "Mariam D.", "Marcory"),
 ]
 
+# Champs spécifiques par service (en plus des champs communs nom/téléphone/zone/échéance/email).
+# Adaptés à la nature de chaque prestation. Format : (name, label, type, placeholder_ou_options).
+#   type ∈ {"text", "textarea", "options"} ("options" -> liste de valeurs pour un <select>).
+SERVICE_FIELDS = {
+ "courses": [
+   ("sc_liste", "Liste des articles", "textarea", "Listez vos articles, quantités et marques : 2 kg de riz, 1 régime de banane, paracétamol 500 mg…"),
+   ("sc_budget", "Budget approximatif", "text", "Ex. 25 000 FCFA"),
+   ("sc_livraison", "Adresse de livraison", "text", "Commune, quartier, point de repère"),
+ ],
+ "demarches": [
+   ("sc_organisme", "Administration concernée", "options", ["Mairie", "CNPS", "Direction des impôts", "Préfecture", "Tribunal / juridiction", "Étude notariale", "Structure hospitalière", "Autre administration"]),
+   ("sc_dossier", "Nature du dossier / pièces", "textarea", "Décrivez la démarche : retrait d'acte de naissance, dépôt de dossier CNPS, extrait de casier judiciaire, légalisation de copie…"),
+   ("sc_lieu", "Lieu de dépôt / retrait", "text", "Établissement et commune"),
+ ],
+ "shopping": [
+   ("sc_article", "Article ou cadeau recherché", "textarea", "Décrivez l'article : type, marque, taille, couleur, occasion…"),
+   ("sc_budget", "Budget alloué", "text", "Ex. 30 000 FCFA"),
+   ("sc_emballage", "Conditionnement cadeau", "options", ["Oui, emballage cadeau", "Non merci"]),
+ ],
+ "colis": [
+   ("sc_retrait", "Adresse de retrait", "text", "Commune, quartier, contact sur place"),
+   ("sc_livraison", "Adresse de livraison", "text", "Commune, quartier, destinataire"),
+   ("sc_nature", "Nature du colis", "options", ["Documents / pli", "Petit paquet", "Objet fragile", "Denrées", "Autre"]),
+ ],
+ "secretariat": [
+   ("sc_formule", "Formule souhaitée", "options", ["STARTER — 15 000 FCFA/mois", "CONFORT — 25 000 FCFA/mois", "PREMIUM — 50 000 FCFA/mois", "À conseiller selon mon activité"]),
+   ("sc_secteur", "Votre secteur d'activité", "text", "Profession libérale, santé, commerce, BTP…"),
+   ("sc_volume", "Volume de RDV estimé / mois", "text", "Ex. environ 12 rendez-vous"),
+ ],
+ "autres": [
+   ("sc_besoin", "Décrivez précisément votre besoin", "textarea", "Expliquez la tâche, le lieu d'intervention et le résultat attendu."),
+   ("sc_frequence", "Fréquence", "options", ["Mission ponctuelle", "Hebdomadaire", "Mensuelle", "À définir ensemble"]),
+ ],
+}
+
+# ---------------------------------------------------------------- BLOG (3 articles)
+# Corps d'article : liste de blocs (type, contenu). type ∈ {h2, p, ul, quote}.
+BLOG = [
+ {
+  "slug": "demarches-administratives-abidjan-sans-attente",
+  "cat": "Démarches", "icon": "stamp", "img": "img/services/demarches.jpg",
+  "service": "demarches",
+  "date": "2026-06-10", "date_disp": "10 juin 2026", "read": "5 min de lecture",
+  "title": "Démarches administratives à Abidjan : récupérez vos documents sans y perdre la journée",
+  "excerpt": "Files d'attente, allers-retours, guichets fermés : les formalités administratives "
+             "grignotent un temps précieux. Voici comment déléguer dépôt, suivi et retrait de vos dossiers.",
+  "lead": "Acte de naissance, extrait de casier judiciaire, dossier CNPS, déclaration fiscale : à Abidjan, "
+          "une simple formalité peut mobiliser une demi-journée entière entre déplacement, file d'attente et "
+          "guichets engorgés. Pour un actif ou un chef d'entreprise, ce temps a un coût réel.",
+  "body": [
+    ("h2", "Le vrai coût d'une démarche administrative"),
+    ("p", "Une formalité administrative ne se limite jamais au temps passé au guichet. Il faut compter le "
+          "trajet, l'attente — souvent plusieurs heures — et, fréquemment, un second passage parce qu'une "
+          "pièce manquait au dossier ou que l'agent compétent était absent. Pour une personne en activité, "
+          "chaque déplacement représente une matinée de travail perdue."),
+    ("p", "À cela s'ajoute l'incertitude : horaires variables, procédures qui évoluent, files qui s'allongent "
+          "en début et en fin de mois. Sans une bonne connaissance du circuit, on multiplie les allers-retours."),
+    ("h2", "Les démarches les plus chronophages"),
+    ("ul", ["Retrait d'actes d'état civil et de copies certifiées en mairie ;",
+            "Constitution et dépôt de dossiers à la CNPS ;",
+            "Formalités auprès de l'administration fiscale et de la préfecture ;",
+            "Obtention d'un extrait de casier judiciaire au tribunal ;",
+            "Récupération de résultats médicaux et de documents hospitaliers."]),
+    ("h2", "La solution Mon Commis : un mandataire qui gère l'attente à votre place"),
+    ("p", "Mon Commis agit comme votre mandataire. Vous nous confiez la nature de la démarche et les pièces "
+          "nécessaires ; nous nous chargeons du dépôt, du suivi de l'instruction et du retrait de vos documents. "
+          "Vous êtes informé à chaque étape et vous ne vous déplacez plus inutilement."),
+    ("quote", "Au lieu de poser une demi-journée de congé, j'ai reçu mon extrait de casier judiciaire le "
+              "lendemain, sans bouger de mon bureau."),
+    ("p", "Vos pièces justificatives sont traitées avec une stricte confidentialité, et les frais de la "
+          "mission sont clairs et communiqués en FCFA avant toute intervention. Vous gardez le contrôle, "
+          "nous prenons en charge la logistique et le temps d'attente."),
+  ],
+ },
+ {
+  "slug": "deleguer-courses-abidjan-budget-maitrise",
+  "cat": "Courses", "icon": "cart", "img": "img/services/courses.jpg",
+  "service": "courses",
+  "date": "2026-06-04", "date_disp": "4 juin 2026", "read": "4 min de lecture",
+  "title": "Déléguer ses courses à Abidjan sans exploser son budget : mode d'emploi",
+  "excerpt": "Marché, officine, supérette : entre les embouteillages et la gestion du budget, faire ses "
+             "courses devient une corvée. Déléguer ne veut pas dire dépenser plus — voici comment.",
+  "lead": "Faire ses courses au marché ou en pharmacie à Abidjan, c'est composer avec les embouteillages, la "
+          "chaleur, la négociation des prix et le contrôle de la fraîcheur. Beaucoup pensent que déléguer "
+          "revient à payer plus cher. En réalité, une délégation bien cadrée protège votre temps… et votre budget.",
+  "body": [
+    ("h2", "Pourquoi les courses pèsent autant sur une journée"),
+    ("p", "Entre le trajet jusqu'au marché vivrier, le temps de sélection des produits frais, le passage en "
+          "officine et le retour, une simple tournée de courses peut mobiliser deux à trois heures. Multiplié "
+          "par plusieurs fois dans la semaine, c'est un temps considérable soustrait à votre activité ou à votre famille."),
+    ("h2", "Déléguer sans perdre le contrôle du budget"),
+    ("p", "La clé d'une délégation maîtrisée tient en trois éléments : une liste précise, un budget plafond et "
+          "un compte rendu transparent. Vous indiquez les articles, les quantités et le montant à ne pas "
+          "dépasser ; le commis sélectionne, contrôle la qualité et respecte strictement l'enveloppe fixée."),
+    ("ul", ["Une liste détaillée évite les achats superflus ;",
+            "Un budget plafond cadre la dépense à l'avance ;",
+            "Le contrôle de la fraîcheur garantit la qualité des produits ;",
+            "La confidentialité couvre les achats sensibles, en pharmacie notamment."]),
+    ("h2", "L'approche Mon Commis"),
+    ("p", "Mon Commis prend en charge votre approvisionnement du quotidien — marché, officine, commerces de "
+          "proximité — avec un objectif simple : vous restituer du temps sans alourdir votre budget. Vous "
+          "transmettez votre liste, nous achetons au plus juste et nous livrons à votre adresse."),
+    ("quote", "Je reçois mes courses du marché chaque semaine, produits bien choisis et budget respecté. "
+              "Je récupère deux heures sur mon emploi du temps."),
+    ("p", "Pour les achats récurrents, un réassort planifié peut être mis en place : vous ne pensez plus à "
+          "vos courses, elles arrivent au bon moment."),
+  ],
+ },
+ {
+  "slug": "secretariat-a-distance-ne-plus-rater-rendez-vous",
+  "cat": "Secrétariat", "icon": "calendar", "img": "img/services/secretariat.jpg",
+  "service": "secretariat",
+  "date": "2026-05-28", "date_disp": "28 mai 2026", "read": "5 min de lecture",
+  "title": "Ne plus jamais oublier un rendez-vous : le secrétariat à distance pour professionnels occupés",
+  "excerpt": "Un rendez-vous oublié, c'est un client perdu ou une opportunité manquée. Comment une gestion "
+             "d'agenda externalisée sécurise votre emploi du temps, sans embaucher.",
+  "lead": "Pour un professionnel libéral, un commerçant ou un dirigeant, l'agenda est le nerf de l'activité. "
+          "Un rendez-vous oublié ou mal noté, c'est un client perdu, une opportunité manquée ou une "
+          "réputation entamée. Pourtant, peu de structures peuvent justifier l'embauche d'un secrétaire à temps plein.",
+  "body": [
+    ("h2", "Le coût invisible d'une mauvaise gestion d'agenda"),
+    ("p", "Les rendez-vous non honorés, les doubles réservations et les rappels oubliés ont un impact direct "
+          "sur le chiffre d'affaires et sur l'image de l'entreprise. Gérer soi-même son agenda en plus de son "
+          "cœur de métier conduit presque toujours à des oublis, surtout en période de forte activité."),
+    ("h2", "Externaliser plutôt qu'embaucher"),
+    ("p", "La gestion d'agenda externalisée offre les bénéfices d'un secrétariat sans les charges d'un poste "
+          "à temps plein. Un prestataire dédié saisit vos rendez-vous, vous transmet votre programme, vous "
+          "rappelle avant chaque échéance et confirme auprès de vos interlocuteurs."),
+    ("ul", ["Saisie centralisée dans un agenda partagé (Google Calendar) ;",
+            "Programme de la semaine transmis chaque dimanche ;",
+            "Rappel personnalisé 30 minutes avant chaque rendez-vous ;",
+            "Confirmation téléphonique auprès de vos contacts, selon la formule."]),
+    ("h2", "Trois formules calibrées selon votre activité"),
+    ("p", "Le pôle Secrétariat à Distance de Mon Commis propose trois formules d'abonnement mensuel : STARTER "
+          "(15 000 FCFA, jusqu'à 8 RDV), CONFORT (25 000 FCFA, jusqu'à 20 RDV) et PREMIUM (50 000 FCFA, RDV "
+          "illimités, avec gestion du carnet de contacts et recherche d'informations)."),
+    ("quote", "Depuis que mon agenda est géré pour moi, je ne rate plus aucun rendez-vous — et mes clients "
+              "reçoivent toujours leur rappel."),
+    ("p", "Vous choisissez la formule adaptée à votre volume de rendez-vous, et vous reprenez le contrôle de "
+          "votre temps. Sans embaucher, sans charges fixes."),
+  ],
+ },
+]
+# Métadonnées éditoriales (architecture article façon hub : hero + cartes synthèse + aside).
+BLOG_EXTRA = {
+ "demarches-administratives-abidjan-sans-attente": {
+   "tags": ["Démarches", "Gain de temps", "Abidjan"],
+   "audience": "Particuliers & pros",
+   "points": [
+     "Dépôt, suivi et retrait de vos dossiers menés de bout en bout.",
+     "Un mandataire qui gère la file d'attente et les guichets à votre place.",
+     "Traitement confidentiel de vos pièces justificatives.",
+   ],
+   "impacts": [
+     "Plus de demi-journées perdues en déplacements.",
+     "Un suivi clair de l'avancement de votre dossier.",
+     "Des frais annoncés en FCFA avant toute intervention.",
+   ],
+   "keywords": ["Mairie", "CNPS", "Impôts", "Préfecture", "Acte d'état civil", "Casier judiciaire"],
+   "essentiel": [
+     "Confiez la nature de la démarche et les pièces requises.",
+     "Mon Commis dépose, suit et retire le dossier à votre place.",
+     "Vous êtes informé à chaque étape, sans vous déplacer.",
+   ],
+ },
+ "deleguer-courses-abidjan-budget-maitrise": {
+   "tags": ["Courses", "Budget", "Abidjan"],
+   "audience": "Particuliers & pros",
+   "points": [
+     "Approvisionnement marché, officine et supérette délégué.",
+     "Liste précise + budget plafond = dépense maîtrisée.",
+     "Contrôle de la fraîcheur et des quantités.",
+   ],
+   "impacts": [
+     "Deux à trois heures récupérées chaque semaine.",
+     "Un budget respecté, sans achats superflus.",
+     "Vos achats sensibles traités en toute discrétion.",
+   ],
+   "keywords": ["Marché", "Officine", "Supérette", "Liste de courses", "Budget plafond", "Livraison"],
+   "essentiel": [
+     "Transmettez votre liste et votre budget plafond.",
+     "Le commis sélectionne et contrôle la qualité.",
+     "Livraison à votre adresse, budget respecté.",
+   ],
+ },
+ "secretariat-a-distance-ne-plus-rater-rendez-vous": {
+   "tags": ["Secrétariat", "Organisation", "Pros"],
+   "audience": "Professionnels",
+   "points": [
+     "Agenda saisi, rappelé et confirmé pour vous.",
+     "Trois formules mensuelles selon votre volume de RDV.",
+     "Les bénéfices d'un secrétariat, sans embaucher.",
+   ],
+   "impacts": [
+     "Plus aucun rendez-vous oublié ni doublé.",
+     "Une image professionnelle renforcée.",
+     "Aucune charge fixe d'un poste à temps plein.",
+   ],
+   "keywords": ["Agenda", "Google Calendar", "Rappels", "Confirmations", "STARTER", "CONFORT", "PREMIUM"],
+   "essentiel": [
+     "Vos rendez-vous centralisés dans un agenda partagé.",
+     "Rappel personnalisé 30 min avant chaque échéance.",
+     "Confirmation téléphonique auprès de vos interlocuteurs.",
+   ],
+ },
+}
+for _a in BLOG:
+    _a.update(BLOG_EXTRA[_a["slug"]])
+    _a["url"] = f"blog-{_a['slug']}.html"
+
 # ================================================================ STRUCTURE
-def head(title, desc, path, page_class, og_type="website", page_type="WebPage"):
+def head(title, desc, path, page_class, og_type="website", page_type="WebPage", ld_extra=None):
     D = SITE["domain"]
     tel = SITE["tel1_href"]
     canonical = D + "/" + (path if path != "index.html" else "")
+    page_node = {"@type": page_type, "@id": canonical + "#webpage", "url": canonical, "name": title,
+                 "description": desc, "isPartOf": {"@id": D + "/#website"}, "about": {"@id": D + "/#business"},
+                 "inLanguage": "fr-CI"}
+    if ld_extra:
+        page_node.update(ld_extra)
     ldjson = json.dumps({"@context": "https://schema.org", "@graph": [
         {"@type": "LocalBusiness", "@id": D + "/#business", "name": SITE["legal"],
          "url": D + "/", "image": D + "/img/brand/og-mon-commis.jpg",
@@ -284,10 +512,13 @@ def head(title, desc, path, page_class, og_type="website", page_type="WebPage"):
          "areaServed": "Abidjan", "currenciesAccepted": "XOF",
          "contactPoint": {"@type": "ContactPoint", "telephone": tel, "contactType": "customer service", "areaServed": "CI", "availableLanguage": ["fr"]}},
         {"@type": "WebSite", "@id": D + "/#website", "name": SITE["name"], "url": D + "/",
-         "inLanguage": "fr-CI", "publisher": {"@id": D + "/#business"}},
-        {"@type": page_type, "@id": canonical + "#webpage", "url": canonical, "name": title,
-         "description": desc, "isPartOf": {"@id": D + "/#website"}, "about": {"@id": D + "/#business"},
-         "inLanguage": "fr-CI"}]},
+         "inLanguage": "fr-CI", "publisher": {"@id": D + "/#business"},
+         "creator": {"@id": "https://tech-and-web.com/#agency"}},
+        {"@type": ["Organization", "ProfessionalService"], "@id": "https://tech-and-web.com/#agency",
+         "name": "Tech & Web", "url": "https://tech-and-web.com",
+         "description": "Agence digitale : conception de sites web, d'applications métier et de solutions numériques sur mesure, avec optimisation pour le référencement (moteurs de recherche et assistants IA).",
+         "knowsAbout": ["Conception de sites web", "Développement d'applications", "Référencement (SEO)", "Indexation par les assistants IA", "Solutions digitales sur mesure"]},
+        page_node]},
         ensure_ascii=False)
     return f"""<!doctype html>
 <html lang="fr">
@@ -298,6 +529,8 @@ def head(title, desc, path, page_class, og_type="website", page_type="WebPage"):
 <meta name="description" content="{desc}">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="author" content="{SITE['legal']}">
+<meta name="designer" content="Tech &amp; Web — tech-and-web.com">
+<link rel="author" href="https://tech-and-web.com">
 <meta name="format-detection" content="telephone=no">
 <meta name="theme-color" content="#112844">
 <link rel="canonical" href="{canonical}">
@@ -355,6 +588,7 @@ def header(active=""):
           </ul>
         </div>
         <a class="nav-link{a('about')}" href="a-propos.html">À propos</a>
+        <a class="nav-link{a('blog')}" href="blog.html">Blog</a>
         <a class="nav-link{a('contact')}" href="contact.html">Contact</a>
         <a class="nav-cta" href="contact.html">{ico('send')} Demander un commis</a>
       </nav>
@@ -367,46 +601,41 @@ def header(active=""):
 def footer():
     serv_links = "".join(f'<a href="{s["url"]}">{s["title"]}</a>\n' for s in SERVICES)
     return f"""</main>
-<footer class="site-footer">
-  <div class="footer-main">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          {brand()}
-          <p class="footer-desc">Conciergerie & courses à Abidjan. Vos courses, démarches, colis et rendez-vous confiés à un commis de confiance — vous gagnez un temps précieux.</p>
-          <p class="footer-tagline">Au cœur d'Abidjan, <span class="nx-script">à votre service.</span></p>
-        </div>
-        <div class="footer-nav">
-          <h4>Nos services</h4>
-          {serv_links}
-        </div>
-        <div class="footer-nav">
-          <h4>Mon Commis</h4>
-          <a href="services.html">Tous les services</a>
-          <a href="secretariat.html">Secrétariat à distance</a>
-          <a href="a-propos.html">À propos</a>
-          <a href="services.html#zones">Zones de couverture</a>
-          <a href="contact.html">Demander un commis</a>
-        </div>
-        <div class="footer-nav footer-nav-contact">
-          <h4>Contact</h4>
-          <a class="footer-phone" href="tel:{SITE['tel1_href']}"><span class="footer-phone-ico">{ico('phone')}</span><span class="footer-phone-num">{SITE['tel1_disp']}</span></a>
-          <a href="https://wa.me/{SITE['wa']}" target="_blank" rel="noopener noreferrer">{ico('message')} WhatsApp</a>
-          <span class="footer-address">{ico('pin')} {SITE['addr']}</span>
-          <div class="footer-social">
-            <a href="https://wa.me/{SITE['wa']}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">{SOCIAL['whatsapp']}</a>
-            <a href="#" aria-label="TikTok">{SOCIAL['tiktok']}</a>
-            <a href="#" aria-label="Instagram">{SOCIAL['instagram']}</a>
-            <a href="#" aria-label="Facebook">{SOCIAL['facebook']}</a>
-          </div>
+<footer class="site-footer mc-footer">
+  <div class="container">
+    <div class="mc-footer-grid">
+      <div class="mc-footer-brand">
+        {brand()}
+        <p class="mc-footer-desc">Conciergerie & courses à Abidjan — un commis de confiance pour vos courses, démarches, colis et rendez-vous.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/{SITE['wa']}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">{SOCIAL['whatsapp']}</a>
+          <a href="#" aria-label="TikTok">{SOCIAL['tiktok']}</a>
+          <a href="#" aria-label="Instagram">{SOCIAL['instagram']}</a>
+          <a href="#" aria-label="Facebook">{SOCIAL['facebook']}</a>
         </div>
       </div>
+      <nav class="mc-footer-col" aria-label="Services">
+        <h4>Services</h4>
+        {serv_links}
+      </nav>
+      <nav class="mc-footer-col" aria-label="Mon Commis">
+        <h4>Mon Commis</h4>
+        <a href="a-propos.html">À propos</a>
+        <a href="services.html">Tous les services</a>
+        <a href="blog.html">Blog & conseils</a>
+        <a href="services.html#zones">Zones de couverture</a>
+        <a href="contact.html">Demander un commis</a>
+      </nav>
+      <div class="mc-footer-col mc-footer-contact">
+        <h4>Contact</h4>
+        <a class="mc-footer-phone" href="tel:{SITE['tel1_href']}">{ico('phone')} {SITE['tel1_disp']}</a>
+        <a href="https://wa.me/{SITE['wa']}" target="_blank" rel="noopener noreferrer">{ico('message')} WhatsApp</a>
+        <span>{ico('pin')} {SITE['addr']}</span>
+      </div>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="container footer-bottom-inner">
+    <div class="mc-footer-bottom">
       <span>&copy; {SITE['year']} {SITE['legal']} — Abidjan, Côte d'Ivoire. Tous droits réservés.</span>
-      <a href="contact.html">Demander un commis</a>
+      <a class="mc-credit" href="https://tech-and-web.com" target="_blank" rel="noopener" title="Tech &amp; Web — conception de sites web, applications et solutions digitales optimisés pour les moteurs de recherche et les assistants IA">Conception, développement &amp; référencement&nbsp;: <strong>Tech&nbsp;&amp;&nbsp;Web</strong></a>
     </div>
   </div>
 </footer>
@@ -492,15 +721,16 @@ def section_intro():
       {hub()}
       <div class="reveal d1">
         <span class="nx-eyebrow">Présentation</span>
-        <h2 class="section-title">Un seul commis, <span class="nx-mark">tous vos besoins</span></h2>
-        <p class="section-copy nx-lead-xl">Mon Commis est votre conciergerie de proximité à Abidjan. Une équipe fiable et discrète prend en charge vos courses, vos démarches et vos rendez-vous — pour vous faire gagner un temps précieux.</p>
+        <h2 class="section-title">Une conciergerie de proximité, <span class="nx-mark">au service d'Abidjan</span></h2>
+        <p class="section-copy">Mon Commis est une structure ivoirienne de conciergerie et de courses. Nous prenons en charge vos achats, vos démarches administratives, vos colis et la gestion de vos rendez-vous, avec un seul objectif&nbsp;: vous restituer du temps et vous garantir un service fiable, ponctuel et confidentiel.</p>
+        <p class="section-copy">Particuliers comme professionnels bénéficient d'un interlocuteur unique, d'un suivi rigoureux de chaque mission et d'une tarification claire en FCFA — dans toutes les communes d'Abidjan.</p>
         <ul class="nx-list" style="margin-top:18px">
-          <li>{ico('check')}<span><strong>Un interlocuteur unique</strong> — du marché à la mairie, une seule équipe pour tout.</span></li>
-          <li>{ico('check')}<span><strong>Toutes les communes d'Abidjan</strong> — et au-delà sur devis, jusqu'à Grand-Bassam.</span></li>
+          <li>{ico('check')}<span><strong>Interlocuteur unique</strong> — une seule équipe pour l'ensemble de vos besoins.</span></li>
+          <li>{ico('check')}<span><strong>Couverture complète</strong> — toutes les communes d'Abidjan, et au-delà sur devis.</span></li>
           <li>{ico('check')}<span><strong>Sérieux & confidentialité</strong> — documents sensibles, ordonnances et colis traités avec soin.</span></li>
-          <li>{ico('check')}<span><strong>Devis clair en FCFA</strong> — sans surprise, paiement espèces ou mobile money.</span></li>
+          <li>{ico('check')}<span><strong>Transparence</strong> — devis clair en FCFA, paiement espèces ou mobile money.</span></li>
         </ul>
-        <div class="nx-hero-cta" style="margin-top:26px">
+        <div class="nx-hero-cta" style="margin-top:24px">
           <a class="btn-main" href="services.html">Découvrir nos services</a>
           <a class="btn-secondary" href="https://wa.me/{SITE['wa']}" target="_blank" rel="noopener noreferrer">{ico('message')} WhatsApp</a>
         </div>
@@ -542,56 +772,60 @@ def section_services(eyebrow="Nos services", titre="Tout ce qu'un commis peut fa
   </div>
 </section>"""
 
-def section_steps():
-    cards = ""
-    for i, (icn, t, d) in enumerate(STEPS, 1):
-        cards += f"""<article class="mc-step reveal">
-  <span class="mc-step-num">{i:02d}</span>
-  <span class="nx-ico is-navy">{ico(icn)}</span>
-  <h3>{t}</h3>
-  <p>{d}</p>
+def compact_card(icon, title, badge, text, sub=None):
+    """Carte compacte horizontale (icône + en-tête avec badge + descriptif), façon « Zones »."""
+    badge_html = f'<span class="mc-compact-badge">{badge}</span>' if badge else ""
+    sub_html = f'<p class="mc-compact-sub">{ico("pin")} <span>{sub}</span></p>' if sub else ""
+    return f"""<article class="mc-compact-card reveal">
+  <span class="mc-compact-ico">{ico(icon)}</span>
+  <div class="mc-compact-body">
+    <div class="mc-compact-head"><h3>{title}</h3>{badge_html}</div>
+    <p class="mc-compact-text">{text}</p>
+    {sub_html}
+  </div>
 </article>
 """
+
+def section_steps():
+    cards = "".join(compact_card(icn, t, f"Étape {i}", d) for i, (icn, t, d) in enumerate(STEPS, 1))
     return f"""<section class="section">
   <div class="container">
     <div class="section-header reveal"><div class="section-heading">
-      <span class="nx-eyebrow">Comment ça marche</span>
+      <span class="nx-eyebrow">Comment ça marche&nbsp;?</span>
       <h2 class="section-title">Trois étapes, zéro stress</h2>
     </div></div>
-    <div class="nx-grid cols-3 mc-steps">{cards}</div>
+    <div class="mc-compact-grid mc-swipe">{cards}</div>
   </div>
 </section>"""
 
 def section_args():
-    cards = "".join(f'<article class="nx-card reveal"><span class="nx-ico is-lime">{ico(i)}</span><h3>{t}</h3><p>{d}</p></article>\n' for i, t, d in ARGS)
+    cards = ""
+    for n, (i, t, d) in enumerate(ARGS, 1):
+        cards += (f'<article class="mc-why-card reveal">'
+                  f'<span class="mc-why-num">0{n}</span>'
+                  f'<span class="mc-why-ico">{ico(i)}</span>'
+                  f'<h3>{t}</h3><p>{d}</p></article>\n')
     return f"""<section class="section section-soft">
   <div class="container">
     <div class="section-header reveal"><div class="section-heading">
-      <span class="nx-eyebrow">Pourquoi Mon Commis</span>
-      <h2 class="section-title">Le bon réflexe pour gagner du temps</h2>
+      <span class="nx-eyebrow">Pourquoi nous&nbsp;?</span>
+      <h2 class="section-title">Pourquoi Mon Commis&nbsp;?</h2>
+      <p class="section-copy">Un partenaire de proximité, fiable et discret, qui prend en charge vos tâches du quotidien — pour que vous vous consacriez à l'essentiel.</p>
     </div></div>
-    <div class="nx-grid cols-4">{cards}</div>
+    <div class="mc-why-grid mc-swipe">{cards}</div>
   </div>
 </section>"""
 
 def section_zones():
-    rows = ""
-    for nom, communes, frais, icn in ZONES:
-        rows += f"""<article class="nx-card reveal">
-  <span class="nx-ico is-navy">{ico(icn)}</span>
-  <h3>{nom}</h3>
-  <p>{communes}</p>
-  <p class="nx-zone-fee">{ico('wallet')} <strong>{frais}</strong></p>
-</article>
-"""
+    rows = "".join(compact_card(icn, nom, frais, pro, sub=communes) for nom, communes, frais, icn, pro in ZONES)
     return f"""<section class="section" id="zones">
   <div class="container">
     <div class="section-header reveal"><div class="section-heading">
       <span class="nx-eyebrow">Zones de couverture</span>
       <h2 class="section-title">De Cocody à Grand-Bassam — et au-delà</h2>
-      <p class="section-copy">Nous intervenons dans toutes les communes d'Abidjan. Les frais de déplacement dépendent de la zone.</p>
+      <p class="section-copy">Nous intervenons dans toutes les communes du Grand Abidjan. Les frais de déplacement sont déterminés selon la zone d'intervention.</p>
     </div></div>
-    <div class="nx-grid cols-3">{rows}</div>
+    <div class="mc-compact-grid mc-swipe">{rows}</div>
   </div>
 </section>"""
 
@@ -630,7 +864,7 @@ def section_formules(compact=False):
       <h2 class="section-title">Votre agenda, géré pour vous</h2>
       <p class="section-copy">Un secrétariat personnel par abonnement mensuel : vos rendez-vous saisis, rappelés et confirmés — vous ne ratez plus rien.</p>
     </div></div>
-    <div class="nx-grid cols-3 nx-prices">{formules_cards()}</div>
+    <div class="nx-grid cols-3 nx-prices mc-swipe">{formules_cards()}</div>
     {inclus_block}
   </div>
 </section>"""
@@ -653,16 +887,24 @@ def section_gallery():
 
 def section_testimonials():
     cards = ""
-    for txt, who, ville in TESTIMONIALS:
+    for n, (txt, who, ville) in enumerate(TESTIMONIALS):
         ini = "".join(w[0] for w in who.split()[:2]).upper()
-        cards += f'<article class="nx-quote reveal"><p>« {txt} »</p><div class="nx-quote-by"><span class="nx-avatar">{ini}</span><div><strong>{who}</strong><br><span>{ville}</span></div></div></article>\n'
-    return f"""<section class="section section-soft">
+        d = f" d{n%3}" if n % 3 else ""
+        cards += (f'<article class="mc-quote reveal{d}">'
+                  f'<span class="mc-quote-mark" aria-hidden="true">&ldquo;</span>'
+                  f'<p class="mc-quote-text">{txt}</p>'
+                  f'<div class="mc-quote-by"><span class="mc-quote-avatar">{ini}</span>'
+                  f'<span class="mc-quote-meta"><strong>{who}</strong><span>{ico("pin")} {ville}</span></span>'
+                  f'<span class="mc-quote-stars">{ico("star")}{ico("star")}{ico("star")}{ico("star")}{ico("star")}</span></div>'
+                  f'</article>\n')
+    return f"""<section class="section section-soft mc-trust">
   <div class="container">
     <div class="section-header reveal"><div class="section-heading">
       <span class="nx-eyebrow">Ils nous font confiance</span>
       <h2 class="section-title">La satisfaction, notre meilleure référence</h2>
+      <p class="section-copy">Des clients qui ont retrouvé du temps — et la tranquillité d'esprit.</p>
     </div></div>
-    <div class="nx-grid cols-3">{cards}</div>
+    <div class="mc-quote-grid mc-swipe">{cards}</div>
   </div>
 </section>"""
 
@@ -722,6 +964,86 @@ def contact_section(title="Demandez votre commis"):
   </div>
 </section>"""
 
+def _render_service_fields(slug):
+    """Champs spécifiques au service, alimentés par SERVICE_FIELDS."""
+    html = ""
+    for name, label, ftype, extra in SERVICE_FIELDS.get(slug, []):
+        fid = name.replace("_", "-")
+        if ftype == "textarea":
+            html += (f'<div class="form-group full"><label class="form-label" for="{fid}">{label}</label>'
+                     f'<textarea class="form-control" id="{fid}" name="{name}" placeholder="{extra}" '
+                     f'data-field data-label="{label}"></textarea></div>\n')
+        elif ftype == "options":
+            opts = "".join(f"<option>{o}</option>" for o in extra)
+            html += (f'<div class="form-group"><label class="form-label" for="{fid}">{label}</label>'
+                     f'<select class="form-control" id="{fid}" name="{name}" data-field data-label="{label}">'
+                     f'<option value="">Choisir…</option>{opts}</select></div>\n')
+        else:
+            html += (f'<div class="form-group"><label class="form-label" for="{fid}">{label}</label>'
+                     f'<input class="form-control" id="{fid}" name="{name}" type="text" placeholder="{extra}" '
+                     f'data-field data-label="{label}"></div>\n')
+    return html
+
+def service_contact_section(s):
+    """Formulaire dédié au service, adapté à la spécificité de la prestation."""
+    zone_opts = "".join(f'<option value="{z[0]}">{z[0]}</option>' for z in ZONES)
+    presta_opts = "".join(f'<option value="{t}">{t}</option>' for _, t, _ in s["sub"])
+    presta_opts += '<option value="Plusieurs prestations / autre">Plusieurs prestations / autre</option>'
+    extra_fields = _render_service_fields(s["slug"])
+    wa_icon = SOCIAL["whatsapp"].replace("<svg ", '<svg class="nx-svg" ', 1)
+    intro = (f"Commandez la prestation « {s['title']} » en quelques champs adaptés à votre besoin. "
+             "Nous vous recontactons rapidement avec un devis clair en FCFA — ou poursuivez sur WhatsApp.")
+    return f"""<section id="commander" class="section section-dark nx-contact mc-order">
+  <div class="container">
+    <div class="section-header reveal"><div class="section-heading">
+      <span class="nx-eyebrow">Commander cette prestation</span>
+      <h2 class="section-title">Commander : {s['title']}</h2>
+      <p class="section-copy">{intro}</p>
+    </div></div>
+    <div class="contact-layout">
+      <div class="form-shell reveal">
+        <form id="contact-brief" data-wa="{SITE['wa']}" novalidate>
+          <select hidden name="project_type" data-field data-label="Service"><option value="{s['title']}" selected>{s['title']}</option></select>
+          <div class="form-grid">
+            <div class="form-group full"><label class="form-label" for="prestation-select">Prestation souhaitée</label><select class="form-control" id="prestation-select" name="prestation" data-field data-label="Prestation"><option value="">Choisir la prestation…</option>{presta_opts}</select></div>
+            {extra_fields}            <div class="form-group"><label class="form-label" for="full-name">Nom complet</label><input class="form-control" id="full-name" name="full_name" type="text" autocomplete="name" placeholder="Vos nom et prénom" data-field data-label="Nom"></div>
+            <div class="form-group"><label class="form-label" for="phone-number">Téléphone / WhatsApp</label><input class="form-control" id="phone-number" name="phone_number" type="tel" autocomplete="tel" placeholder="07 …" data-field data-label="Téléphone"></div>
+            <div class="form-group"><label class="form-label" for="zone">Zone / commune</label><select class="form-control" id="zone" name="location" data-field data-label="Zone"><option value="">Choisir votre zone…</option>{zone_opts}</select></div>
+            <div class="form-group"><label class="form-label" for="echeance">Quand ?</label><select class="form-control" id="echeance" name="timeline" data-field data-label="Échéance"><option value="">Choisir…</option><option>Dès que possible</option><option value="Urgent (dans l'heure, +50%)">Urgent — dans l'heure (+50 %)</option><option>Aujourd'hui</option><option>Cette semaine</option></select></div>
+            <div class="form-group full"><label class="form-label" for="email-address">Email (optionnel)</label><input class="form-control" id="email-address" name="email_address" type="email" autocomplete="email" placeholder="nom@domaine.com" data-field data-label="Email"></div>
+            <div class="form-group full"><label class="form-label" for="project-message">Précisions complémentaires</label><textarea class="form-control" id="project-message" name="project_message" placeholder="Toute information utile : budget, contraintes, créneau préféré…" data-field data-label="Précisions"></textarea></div>
+          </div>
+          <p class="form-note">{ico('shield')} Vos informations restent confidentielles et ne servent qu'à traiter votre demande.</p>
+          <div class="nx-contact-actions">
+            <button class="btn-lime" type="submit">{ico('send')} Envoyer ma commande</button>
+            <button class="btn-wa" type="button" data-wa-contact data-wa="{SITE['wa']}">{wa_icon} …ou via WhatsApp</button>
+          </div>
+          <div class="form-success" hidden>{ico('check')} Merci ! Votre commande est bien reçue. Mon Commis vous recontacte rapidement.</div>
+          <div class="form-error" hidden style="color:#ffd0d0;margin-top:12px;font-weight:600;"></div>
+        </form>
+      </div>
+      <aside class="nx-contact-card reveal d1">
+        <span class="nx-eyebrow">Service {s['title']}</span>
+        <h3>Une prestation, <span class="nx-script">un interlocuteur dédié</span></h3>
+        <p>{s['tagline']}</p>
+        <a class="nx-contact-wa" href="https://wa.me/{SITE['wa']}" target="_blank" rel="noopener noreferrer">
+          <span class="nx-contact-wa-ico">{wa_icon}</span>
+          <span class="nx-contact-wa-txt"><strong>Discuter sur WhatsApp</strong><small>{SITE['tel1_disp']} — appels & WhatsApp</small></span>
+          <span class="nx-contact-wa-arr">{ico('arrow')}</span>
+        </a>
+        <ul class="nx-list" style="margin-top:18px">
+          {"".join(f'<li>{ico("check")}<span>{x}</span></li>' for x in s["inclus"])}
+        </ul>
+        <div class="nx-contact-trust">
+          <span>{ico('check')} Devis clair en FCFA</span>
+          <span>{ico('shield')} Discrétion</span>
+          <span>{ico('bolt')} Express possible</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>"""
+
 def cta(title="Besoin d'un coup de main aujourd'hui ?",
         text="Confiez votre course, votre démarche ou votre colis à Mon Commis. Devis clair en FCFA, réponse rapide."):
     return f"""<section class="section">
@@ -739,13 +1061,14 @@ def cta(title="Besoin d'un coup de main aujourd'hui ?",
 </section>"""
 
 def section_tarifs():
+    # (titre, badge, descriptif, icône)
     rows = [
-        ("Tarif de base (commission)", "Selon grille tarifaire communiquée au client", "wallet"),
-        ("Supplément urgence", "+50 % du tarif de base (intervention dans l'heure)", "bolt"),
-        ("Shopping (prestation)", "5 000 à 15 000 FCFA selon la complexité des achats", "gift"),
-        ("Collecte de documents", "Prestation complémentaire, facturée séparément", "doc"),
+        ("Tarif de base", "Sur grille", "Commission selon la grille tarifaire communiquée au client avant la mission.", "wallet"),
+        ("Supplément urgence", "+50 %", "Appliqué sur le tarif de base pour une intervention dans l'heure.", "bolt"),
+        ("Shopping", "5 000–15 000 FCFA", "Tarif de la prestation selon la complexité et le volume des achats.", "gift"),
+        ("Collecte de documents", "En sus", "Prestation complémentaire, facturée séparément du tarif de base.", "doc"),
     ]
-    cards = "".join(f'<article class="nx-card reveal"><span class="nx-ico is-lime">{ico(i)}</span><h3>{t}</h3><p>{d}</p></article>\n' for t, d, i in rows)
+    cards = "".join(compact_card(i, t, b, d) for t, b, d, i in rows)
     return f"""<section class="section section-soft" id="tarifs">
   <div class="container">
     <div class="section-header reveal"><div class="section-heading">
@@ -753,7 +1076,7 @@ def section_tarifs():
       <h2 class="section-title">Des tarifs clairs, sans surprise</h2>
       <p class="section-copy">Les frais de commission sont réglés avant le début de chaque mission. Paiement en espèces, mobile money (Orange, MTN, Moov, Wave) ou virement.</p>
     </div></div>
-    <div class="nx-grid cols-4">{cards}</div>
+    <div class="mc-compact-grid mc-swipe">{cards}</div>
   </div>
 </section>"""
 
@@ -778,7 +1101,7 @@ def service_hero(s):
       <h1 class="mc-service-hero-title">{s['title']}</h1>
       <p class="lead">{s['tagline']}</p>
       <div class="nx-hero-cta">
-        <a class="btn-lime" href="contact.html">{ico('send')} Demander ce service</a>
+        <a class="btn-lime" href="#commander">{ico('send')} Commander ce service</a>
         <a class="btn-secondary btn-on-dark" href="https://wa.me/{SITE['wa']}" target="_blank" rel="noopener noreferrer">{ico('message')} WhatsApp</a>
       </div>
     </div>
@@ -788,14 +1111,15 @@ def service_hero(s):
 # =================================================================== PAGES
 def build_index():
     body = (hero()
+            + section_args()
             + section_intro()
             + section_services()
             + section_steps()
-            + section_args()
             + section_gallery()
             + section_formules(compact=True)
             + section_zones()
             + section_testimonials()
+            + section_blog_home()
             + contact_section())
     return (head("Mon Commis — Conciergerie & courses à Abidjan",
                  "Mon Commis, votre commis de confiance à Abidjan : courses au marché, pharmacie, démarches administratives, shopping, colis et secrétariat à distance. Devis en FCFA.",
@@ -818,7 +1142,12 @@ def build_services():
 
 def section_service_detail(s):
     cards = "".join(
-        f'<article class="nx-card reveal"><span class="nx-ico is-lime">{ico(ic)}</span><h3>{t}</h3><p>{d}</p></article>\n'
+        f'<article class="nx-card mc-presta-card reveal">'
+        f'<span class="nx-ico is-lime">{ico(ic)}</span>'
+        f'<h3>{t}</h3><p>{d}</p>'
+        f'<a class="mc-presta-order" href="#commander" data-order-prestation="{t}">'
+        f'{ico("send")} Commander ce service</a>'
+        f'</article>\n'
         for ic, t, d in s["sub"])
     incl = "".join(f'<li>{ico("check")}<span>{x}</span></li>' for x in s["inclus"])
     return f"""<section class="section" id="prestations">
@@ -864,7 +1193,7 @@ def build_service_page(s):
             + section_steps()
             + offer
             + section_testimonials()
-            + contact_section(title=f"Demander : {s['title']}"))
+            + service_contact_section(s))
     active = "secretariat" if s.get("is_secretariat") else "service"
     return (head(title, desc, s["url"], "page-inner", og_type="article", page_type="Service")
             + header(active) + body + footer())
@@ -895,7 +1224,7 @@ def build_about():
       <span class="nx-eyebrow">Nos engagements</span>
       <h2 class="section-title">Ce qui fait la différence</h2>
     </div></div>
-    <div class="nx-grid cols-4">{vals}</div>
+    <div class="nx-grid cols-4 mc-swipe">{vals}</div>
   </div></section>"""
             + cta())
     return (head("À propos — Mon Commis, conciergerie à Abidjan",
@@ -925,6 +1254,229 @@ def build_404():
     return (head("Page introuvable (404) | Mon Commis", "La page demandée est introuvable.",
                  "404.html", "page-inner") + header("") + body + footer())
 
+# ---------------------------------------------------------------- BLOG
+def blog_card(a, featured=False):
+    cls = "nx-blog-card reveal" + (" is-featured" if featured else "")
+    return f"""<article class="{cls}" data-cat="{a['cat']}">
+  <a class="nx-blog-card-media" href="{a['url']}" aria-label="{a['title']}">
+    <img src="{a['img']}" alt="{a['title']}" loading="lazy" decoding="async">
+    <span class="nx-blog-tag">{ico(a['icon'])} {a['cat']}</span>
+  </a>
+  <div class="nx-blog-card-body">
+    <div class="nx-blog-meta"><time datetime="{a['date']}">{a['date_disp']}</time><span>{a['read']}</span></div>
+    <h3 class="nx-blog-card-title"><a href="{a['url']}">{a['title']}</a></h3>
+    <p class="nx-blog-card-excerpt">{a['excerpt']}</p>
+    <a class="nx-blog-card-link" href="{a['url']}">Lire l'article {ico('arrow')}</a>
+  </div>
+</article>
+"""
+
+def section_blog_home():
+    cards = "".join(blog_card(a) for a in BLOG)
+    return f"""<section class="section section-soft" id="blog">
+  <div class="container">
+    <div class="section-header reveal"><div class="section-heading">
+      <span class="nx-eyebrow">Blog & conseils</span>
+      <h2 class="section-title">Gagner du temps, mode d'emploi</h2>
+      <p class="section-copy">Nos conseils pratiques pour déléguer vos courses, vos démarches et la gestion de votre agenda à Abidjan.</p>
+    </div></div>
+    <div class="nx-blog-grid">{cards}</div>
+    <div class="nx-blog-more reveal"><a class="btn-main" href="blog.html">Tous les articles {ico('arrow')}</a></div>
+  </div>
+</section>"""
+
+def build_blog():
+    cats = []
+    for a in BLOG:
+        if a["cat"] not in cats:
+            cats.append(a["cat"])
+    chips = '<button type="button" class="nx-blog-chip is-active" data-filter="all">Tous</button>'
+    chips += "".join(f'<button type="button" class="nx-blog-chip" data-filter="{c}">{c}</button>' for c in cats)
+    cards = "".join(blog_card(a) for a in BLOG)
+    body = (page_hero("Blog & conseils", "Gagner du temps, mode d'emploi",
+                      "Conseils pratiques et retours d'expérience pour déléguer vos courses, vos démarches administratives, vos colis et la gestion de votre agenda — partout à Abidjan.")
+            + f"""<section class="section">
+  <div class="container">
+    <div class="nx-blog-filter reveal">{chips}</div>
+    <div class="nx-blog-grid" data-blog-grid>{cards}</div>
+    <p class="nx-blog-empty" hidden>Aucun article dans cette catégorie pour le moment.</p>
+  </div>
+</section>"""
+            + cta())
+    return (head("Blog & conseils — Conciergerie, courses & démarches à Abidjan | Mon Commis",
+                 "Le blog de Mon Commis : conseils pratiques pour déléguer vos courses, vos démarches administratives et la gestion de votre agenda à Abidjan. Gagnez du temps.",
+                 "blog.html", "page-inner", page_type="CollectionPage")
+            + header("blog") + body + footer())
+
+def _render_article_body(a):
+    """Groupe le corps en blocs .article-section (un par h2) + collecte le sommaire."""
+    toc = []
+    sections = []   # [hid, titre, html_interne]
+    cur = None
+    n = 0
+    for kind, content in a["body"]:
+        if kind == "h2":
+            if cur:
+                sections.append(cur)
+            n += 1
+            hid = f"sec-{n}"
+            toc.append((hid, content))
+            cur = [hid, content, ""]
+        else:
+            if cur is None:
+                cur = ["sec-0", "", ""]
+            if kind == "p":
+                cur[2] += f"<p>{content}</p>\n"
+            elif kind == "ul":
+                cur[2] += "<ul>" + "".join(f"<li>{x}</li>" for x in content) + "</ul>\n"
+            elif kind == "quote":
+                cur[2] += f'<div class="article-highlight"><p>{content}</p></div>\n'
+    if cur:
+        sections.append(cur)
+    html = ""
+    for hid, title, inner in sections:
+        head_h2 = f'<h2>{title}</h2>\n' if title else ""
+        html += f'<div class="article-section" id="{hid}">{head_h2}{inner}</div>\n'
+    return html, toc
+
+def build_article(a):
+    D = SITE["domain"]
+    url = D + "/" + a["url"]
+    svc = SERVICES_BY_SLUG.get(a.get("service"))
+    related = [b for b in BLOG if b["slug"] != a["slug"]]
+    sections_html, toc = _render_article_body(a)
+    wa_svg = SOCIAL['whatsapp'].replace('<svg ', '<svg class="nx-svg" ', 1)
+    fb_svg = SOCIAL['facebook'].replace('<svg ', '<svg class="nx-svg" ', 1)
+
+    tags_html = "".join(f"<span>{t}</span>" for t in a["tags"])
+    points_li = "".join(f"<li>{x}</li>" for x in a["points"])
+    impacts_li = "".join(f"<li>{x}</li>" for x in a["impacts"])
+    kw_li = "".join(f"<li>{k}</li>" for k in a["keywords"])
+    essentiel_li = "".join(f"<li>{x}</li>" for x in a["essentiel"])
+    toc_li = "".join(f'<li><a href="#{hid}">{txt}</a></li>' for hid, txt in toc)
+
+    if svc:
+        primary_href, primary_label = f'{svc["url"]}#commander', "Commander cette prestation"
+    else:
+        primary_href, primary_label = "contact.html", "Demander un commis"
+
+    wa_share = "https://wa.me/?text=" + quote(f"{a['title']} — {url}")
+    fb_share = "https://www.facebook.com/sharer/sharer.php?u=" + quote(url)
+
+    svc_card = ""
+    if svc:
+        svc_card = f"""<div class="article-card article-card-highlight">
+        <h3>Service associé</h3>
+        <p><strong>{svc['title']}</strong> — {svc['tagline']}</p>
+        <a class="article-card-cta" href="{svc['url']}#commander">Voir le service {ico('arrow')}</a>
+      </div>"""
+
+    rel_html = ""
+    for b in related:
+        rel_html += (f'<a href="{b["url"]}" class="related-article">'
+                     f'<span>{b["cat"]}</span><strong>{b["title"]}</strong>'
+                     f'<p>{b["excerpt"]}</p></a>')
+
+    ld_extra = {
+        "@type": "BlogPosting", "headline": a["title"], "description": a["excerpt"],
+        "image": D + "/" + a["img"], "datePublished": a["date"], "dateModified": a["date"],
+        "author": {"@type": "Organization", "name": SITE["legal"], "url": D + "/"},
+        "publisher": {"@id": D + "/#business"},
+        "mainEntityOfPage": url + "#webpage", "inLanguage": "fr-CI", "articleSection": a["cat"],
+        "wordCount": sum(len(c.split()) for k, c in a["body"] if k in ("p", "quote")),
+    }
+    body = f"""<section class="article-hero">
+  <div class="container article-hero-grid">
+    <div class="article-hero-content">
+      <div class="article-hero-panel reveal">
+        <nav class="article-breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a><span>/</span><a href="blog.html">Blog</a><span>/</span><span>{a['cat']}</span>
+        </nav>
+        <span class="article-hero-badge">Article de blog · Mon Commis</span>
+        <div class="article-tags">{tags_html}</div>
+        <h1>{a['title']}</h1>
+        <p>{a['excerpt']}</p>
+        <div class="article-meta">
+          <span>{a['date_disp']}</span>
+          <span>Par l'équipe Mon Commis</span>
+        </div>
+        <div class="article-meta article-meta-kpi" aria-label="Contexte de lecture">
+          <span>{ico('clock')} {a['read']}</span>
+          <span>{ico('users')} {a['audience']}</span>
+          <span>{ico('calendar')} Mis à jour {a['date_disp']}</span>
+        </div>
+        <div class="article-hero-actions">
+          <a class="btn-lime" href="{primary_href}">{ico('send')} {primary_label}</a>
+          <a class="btn-secondary" href="blog.html">{ico('arrow')} Retour au blog</a>
+        </div>
+      </div>
+    </div>
+    <div class="article-hero-summary">
+      <div class="summary-card summary-key reveal">
+        <h3>Points clés</h3>
+        <ul class="summary-list">{points_li}</ul>
+      </div>
+      <div class="summary-card summary-impact reveal">
+        <h3>Bénéfices pour vous</h3>
+        <ul class="summary-list">{impacts_li}</ul>
+      </div>
+      <div class="summary-card summary-keywords reveal">
+        <h3>Mots clés</h3>
+        <ul class="summary-list">{kw_li}</ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="article-body">
+  <div class="container article-body-grid">
+    <article class="article-content">
+      <figure class="article-cover"><img src="{a['img']}" alt="{a['title']}" fetchpriority="high" decoding="async"></figure>
+      <div class="article-intro">
+        <h2>L'essentiel</h2>
+        <p>{a['lead']}</p>
+        <ul class="article-quick-list">{essentiel_li}</ul>
+      </div>
+      {sections_html}
+      <div class="article-section article-final-note" id="conclusion">
+        <h2>Passez à l'action</h2>
+        <p>Confiez cette tâche à Mon Commis : devis clair en FCFA, réponse rapide, dans toutes les communes d'Abidjan.</p>
+        <div class="article-final-actions">
+          <a class="btn-lime" href="{primary_href}">{ico('send')} {primary_label}</a>
+          <a class="btn-secondary" href="https://wa.me/{SITE['wa']}" target="_blank" rel="noopener noreferrer">{ico('message')} WhatsApp</a>
+        </div>
+      </div>
+      <div class="article-share">
+        <span class="article-share-label">Partager cet article</span>
+        <div class="article-share-row">
+          <a class="art-share-btn is-wa" href="{wa_share}" target="_blank" rel="noopener noreferrer" aria-label="Partager sur WhatsApp">{wa_svg}</a>
+          <a class="art-share-btn is-fb" href="{fb_share}" target="_blank" rel="noopener noreferrer" aria-label="Partager sur Facebook">{fb_svg}</a>
+          <button type="button" class="art-share-btn is-copy" data-copy="{url}" aria-label="Copier le lien">{ico('list')}</button>
+        </div>
+      </div>
+    </article>
+    <aside class="article-aside">
+      <div class="article-card article-card-toc">
+        <h3 class="toc-title">Sommaire</h3>
+        <ul class="article-toc">{toc_li}</ul>
+      </div>
+      {svc_card}
+      <div class="article-card article-related">
+        <h3>À lire aussi</h3>
+        <div class="related-articles">{rel_html}</div>
+      </div>
+      <div class="article-card article-card-contact">
+        <h3>Une demande à confier ?</h3>
+        <p>Décrivez votre besoin : réponse rapide et devis clair en FCFA, dans tout Abidjan.</p>
+        <a class="btn-lime" href="contact.html">{ico('send')} Demander un commis</a>
+        <a class="article-card-cta" href="https://wa.me/{SITE['wa']}" target="_blank" rel="noopener noreferrer">{ico('message')} Discuter sur WhatsApp</a>
+      </div>
+    </aside>
+  </div>
+</section>"""
+    return (head(f"{a['title']} | Blog Mon Commis", a["excerpt"], a["url"], "page-inner page-article",
+                 og_type="article", page_type="BlogPosting", ld_extra=ld_extra)
+            + header("blog") + body + footer())
+
 # ---------------------------------------------------------------- SEO
 def build_robots():
     bots = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-Web",
@@ -937,8 +1489,10 @@ def build_robots():
 
 def build_sitemap():
     pages = [("index.html", "1.0", "weekly"), ("services.html", "0.9", "monthly"),
-             ("a-propos.html", "0.7", "monthly"), ("contact.html", "0.8", "monthly")]
+             ("a-propos.html", "0.7", "monthly"), ("blog.html", "0.7", "weekly"),
+             ("contact.html", "0.8", "monthly")]
     pages += [(s["url"], "0.8", "monthly") for s in SERVICES]   # inclut secretariat.html
+    pages += [(a["url"], "0.6", "monthly") for a in BLOG]
     items = ""
     for p, prio, freq in pages:
         loc = SITE["domain"] + "/" + (p if p != "index.html" else "")
@@ -948,6 +1502,7 @@ def build_sitemap():
 def build_llms():
     D = SITE["domain"]
     serv = "\n".join(f"- [{s['title']}]({D}/{s['url']}) : {s['tagline']}" for s in SERVICES)
+    blog = "\n".join(f"- [{a['title']}]({D}/{a['url']}) : {a['excerpt']}" for a in BLOG)
     return f"""# {SITE['legal']}
 
 > Conciergerie & courses à Abidjan (Côte d'Ivoire). Mon Commis met à disposition des commis de confiance pour vos courses, démarches administratives, colis et la gestion de vos rendez-vous. Tarifs en FCFA, toutes les communes d'Abidjan.
@@ -965,10 +1520,14 @@ def build_llms():
 - Zone Étendue : Yopougon, Abobo, Bingerville, Anyama, Songon, Dabou, Grand-Bassam (+1 000 à 2 000 FCFA).
 - Zone Spéciale : hors périmètre, sur devis.
 
+## Blog & conseils
+{blog}
+
 ## Pages clés
 - [Accueil]({D}/)
 - [Services]({D}/services.html)
 - [Secrétariat à distance]({D}/secretariat.html)
+- [Blog & conseils]({D}/blog.html)
 - [À propos]({D}/a-propos.html)
 - [Contact]({D}/contact.html)
 
@@ -1003,6 +1562,9 @@ def main():
     for s in SERVICES:
         write(s["url"], build_service_page(s))   # secretariat.html + service-*.html
     write("a-propos.html", build_about())
+    write("blog.html", build_blog())
+    for a in BLOG:
+        write(a["url"], build_article(a))
     write("contact.html", build_contact())
     write("404.html", build_404())
     write("robots.txt", build_robots())

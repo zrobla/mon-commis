@@ -3,12 +3,12 @@
 > Conciergerie & courses à Abidjan (Côte d'Ivoire). Mon Commis met à disposition des commis de confiance pour vos courses, démarches administratives, colis et la gestion de vos rendez-vous. Tarifs en FCFA, toutes les communes d'Abidjan.
 
 ## Services
-- [Courses](https://moncommis.ci/service-courses.html) : Marché, pharmacie, quotidien : vos courses faites et livrées.
-- [Démarches administratives](https://moncommis.ci/service-demarches.html) : Vos dossiers déposés, suivis et retirés — sans la file d'attente.
-- [Shopping & cadeaux](https://moncommis.ci/service-shopping.html) : Le bon article, le beau cadeau — choisis et livrés pour vous.
-- [Dépôt & retrait de colis](https://moncommis.ci/service-colis.html) : Vos colis acheminés d'un point à un autre, en main propre.
-- [Secrétariat à distance](https://moncommis.ci/secretariat.html) : Votre agenda saisi, rappelé et confirmé — vous ne ratez plus rien.
-- [Autres services](https://moncommis.ci/service-autres.html) : Une tâche particulière ? On la prend en charge, sur-mesure.
+- [Courses](https://moncommis.ci/service-courses.html) : Approvisionnement du quotidien — marché, officine, supérette — sélectionné et livré.
+- [Démarches administratives](https://moncommis.ci/service-demarches.html) : Dépôt, instruction et retrait de vos dossiers administratifs — sans file d'attente.
+- [Shopping & cadeaux](https://moncommis.ci/service-shopping.html) : Sourcing, négociation et livraison de l'article ou du cadeau recherché.
+- [Dépôt & retrait de colis](https://moncommis.ci/service-colis.html) : Acheminement sécurisé de vos plis et colis, avec remise contre signature.
+- [Secrétariat à distance](https://moncommis.ci/secretariat.html) : Gestion d'agenda externalisée : saisie, rappels et confirmation de vos rendez-vous.
+- [Autres services](https://moncommis.ci/service-autres.html) : Missions sur-mesure : un cahier des charges, une solution adaptée.
 
 ## Secrétariat à Distance (abonnements mensuels)
 - STARTER — 15 000 FCFA/mois, jusqu'à 8 RDV/mois.
@@ -20,10 +20,16 @@
 - Zone Étendue : Yopougon, Abobo, Bingerville, Anyama, Songon, Dabou, Grand-Bassam (+1 000 à 2 000 FCFA).
 - Zone Spéciale : hors périmètre, sur devis.
 
+## Blog & conseils
+- [Démarches administratives à Abidjan : récupérez vos documents sans y perdre la journée](https://moncommis.ci/blog-demarches-administratives-abidjan-sans-attente.html) : Files d'attente, allers-retours, guichets fermés : les formalités administratives grignotent un temps précieux. Voici comment déléguer dépôt, suivi et retrait de vos dossiers.
+- [Déléguer ses courses à Abidjan sans exploser son budget : mode d'emploi](https://moncommis.ci/blog-deleguer-courses-abidjan-budget-maitrise.html) : Marché, officine, supérette : entre les embouteillages et la gestion du budget, faire ses courses devient une corvée. Déléguer ne veut pas dire dépenser plus — voici comment.
+- [Ne plus jamais oublier un rendez-vous : le secrétariat à distance pour professionnels occupés](https://moncommis.ci/blog-secretariat-a-distance-ne-plus-rater-rendez-vous.html) : Un rendez-vous oublié, c'est un client perdu ou une opportunité manquée. Comment une gestion d'agenda externalisée sécurise votre emploi du temps, sans embaucher.
+
 ## Pages clés
 - [Accueil](https://moncommis.ci/)
 - [Services](https://moncommis.ci/services.html)
 - [Secrétariat à distance](https://moncommis.ci/secretariat.html)
+- [Blog & conseils](https://moncommis.ci/blog.html)
 - [À propos](https://moncommis.ci/a-propos.html)
 - [Contact](https://moncommis.ci/contact.html)
 

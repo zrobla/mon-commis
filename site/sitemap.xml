@@ -3,6 +3,7 @@
   <url><loc>https://moncommis.ci/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://moncommis.ci/services.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://moncommis.ci/a-propos.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://moncommis.ci/blog.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://moncommis.ci/contact.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://moncommis.ci/service-courses.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://moncommis.ci/service-demarches.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -10,4 +11,7 @@
   <url><loc>https://moncommis.ci/service-colis.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://moncommis.ci/secretariat.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://moncommis.ci/service-autres.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moncommis.ci/blog-demarches-administratives-abidjan-sans-attente.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://moncommis.ci/blog-deleguer-courses-abidjan-budget-maitrise.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://moncommis.ci/blog-secretariat-a-distance-ne-plus-rater-rendez-vous.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
